@@ -16,7 +16,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void FilterService_ShouldThrowArgumentNullException_WhenPassedRepositoryIsNull()
         {
-            IRepository<Car> mockedRepository = null;
+            IEfGenericRepository<Car> mockedRepository = null;
 
             Assert.Throws<ArgumentException>(() => new FilterService(mockedRepository));
         }
@@ -24,7 +24,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void FilterService_ShouldThrowArgumentNullExceptionWithExpectedMessage_WhenPassedRepositoryIsNull()
         {
-            IRepository<Car> mockedRepository = null;
+            IEfGenericRepository<Car> mockedRepository = null;
 
             var expectedMessage = Assert.Throws<ArgumentException>(() => new FilterService(mockedRepository));
 
@@ -34,7 +34,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void FilterService_ShouldCreateInstanceOfFilterService_WhenPassedRepositoryIsCorrectly()
         {
-            var mockedRepository = new Mock<IRepository<Car>>();
+            var mockedRepository = new Mock<IEfGenericRepository<Car>>();
 
             var service = new FilterService(mockedRepository.Object);
 
@@ -44,7 +44,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void FilterService_ShouldImplementsInterfaceIFilterService_WhenPassedRepositoryIsCorrectly()
         {
-            var mockedRepository = new Mock<IRepository<Car>>();
+            var mockedRepository = new Mock<IEfGenericRepository<Car>>();
 
             var service = new FilterService(mockedRepository.Object);
 
@@ -60,7 +60,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -78,7 +78,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -96,7 +96,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -114,7 +114,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -132,7 +132,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilAnnualCheckUp=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilAnnualCheckUp=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(s => s.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -150,7 +150,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilAnnualCheckUp=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilAnnualCheckUp=DateTime.Now }
             };
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -169,7 +169,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
             };
 
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -188,7 +188,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
             };
 
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 
@@ -207,7 +207,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
             };
 
-            var mockedRepo = new Mock<IRepository<Car>>();
+            var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
             var service = new FilterService(mockedRepo.Object);
 

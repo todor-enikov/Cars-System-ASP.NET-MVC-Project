@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CarsSystem.Data.Repositories
 {
-    public class EfGenericRepository<T> : IRepository<T> where T : class
+    public class EfGenericRepository<T> : IEfGenericRepository<T> where T : class
     {
         public EfGenericRepository(ICarsSystemDbContext context)
         {

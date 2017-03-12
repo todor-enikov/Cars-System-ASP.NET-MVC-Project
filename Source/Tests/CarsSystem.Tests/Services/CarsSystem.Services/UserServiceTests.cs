@@ -16,7 +16,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void UsersService_ShouldThrowArgumentNullException_WhenPassedRepositoryIsNull()
         {
-            IRepository<User> mockedRepository = null;
+            IEfGenericRepository<User> mockedRepository = null;
 
             Assert.Throws<ArgumentException>(() => new UsersService(mockedRepository));
         }
@@ -24,7 +24,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void UsersService_ShouldThrowArgumentNullExceptionWithExpectedMessage_WhenPassedRepositoryIsNull()
         {
-            IRepository<User> mockedRepository = null;
+            IEfGenericRepository<User> mockedRepository = null;
 
             var expectedMessage = Assert.Throws<ArgumentException>(() => new UsersService(mockedRepository));
 
@@ -34,7 +34,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void UsersService_ShouldCreateInstanceOfUsersService_WhenPassedRepositoryIsCorrectly()
         {
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
 
             var service = new UsersService(mockedRepository.Object);
 
@@ -44,7 +44,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void UsersService_ShouldImplementsInterfaceIUsersService_WhenPassedRepositoryIsCorrectly()
         {
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
 
             var service = new UsersService(mockedRepository.Object);
 
@@ -61,7 +61,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
 
             };
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);
 
@@ -74,7 +74,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void UsersService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(c => c.GetById("test")).Returns(user);
             var service = new UsersService(mockedRepo.Object);
 
@@ -87,7 +87,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void UsersService_GetUserByIdWorksProperly_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(c => c.GetById("test")).Returns(user);
             var service = new UsersService(mockedRepo.Object);
 
@@ -106,7 +106,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
 
             };
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);
 
@@ -126,7 +126,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
 
             };
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);
 
@@ -146,7 +146,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id = "test2", FirstName = "Marin", LastName = "The hunter", EGN = 6406544343 },
             };
 
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(c => c.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);
 
@@ -165,7 +165,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id = "test2", FirstName = "Marin", LastName = "The hunter", EGN = 6406544343 },
             };
 
-            var mockedRepo = new Mock<IRepository<User>>();
+            var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(c => c.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);
 

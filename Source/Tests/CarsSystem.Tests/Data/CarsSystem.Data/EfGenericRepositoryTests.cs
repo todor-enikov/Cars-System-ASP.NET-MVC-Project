@@ -46,7 +46,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
 
             var repository = new EfGenericRepository<Car>(context.Object);
 
-            Assert.IsInstanceOf<IRepository<Car>>(repository);
+            Assert.IsInstanceOf<IEfGenericRepository<Car>>(repository);
         }
 
         [Test]
@@ -56,7 +56,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
 
             var repository = new EfGenericRepository<User>(context.Object);
 
-            Assert.IsInstanceOf<IRepository<User>>(repository);
+            Assert.IsInstanceOf<IEfGenericRepository<User>>(repository);
         }
 
         [Test]
@@ -98,7 +98,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
             var users = new List<User>();
             users.Add(firstUser);
             users.Add(secondUser);
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.All()).Returns(users);
 
             var result = mockedRepository.Object.All();
@@ -117,7 +117,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 LastName = "Ivanov"
             };
 
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.Add(user)).Verifiable();
 
             mockedRepository.Object.Add(user);
@@ -135,7 +135,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.Add(user)).Verifiable();
 
             mockedRepository.Object.Add(user);
@@ -154,7 +154,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.Update(user)).Verifiable();
 
             mockedRepository.Object.Update(user);
@@ -172,7 +172,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.Add(user)).Verifiable();
             mockedRepository.Setup(r => r.Delete(user)).Verifiable();
 
@@ -194,7 +194,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
-            var mockedRepository = new Mock<IRepository<User>>();
+            var mockedRepository = new Mock<IEfGenericRepository<User>>();
             mockedRepository.Setup(r => r.Add(user)).Verifiable();
             mockedRepository.Setup(r => r.Delete("test")).Verifiable();
 

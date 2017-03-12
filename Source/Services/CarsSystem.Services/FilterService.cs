@@ -9,9 +9,9 @@ namespace CarsSystem.Services
 {
     public class FilterService : IFilterService
     {
-        private readonly IRepository<Car> carRepo;
+        private readonly IEfGenericRepository<Car> carRepo;
 
-        public FilterService(IRepository<Car> carRepo)
+        public FilterService(IEfGenericRepository<Car> carRepo)
         {
             if (carRepo == null)
             {

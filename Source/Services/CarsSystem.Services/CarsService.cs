@@ -9,9 +9,9 @@ namespace CarsSystem.Services
 {
     public class CarsService : ICarsService
     {
-        private readonly IRepository<Car> carRepo;
+        private readonly IEfGenericRepository<Car> carRepo;
 
-        public CarsService(IRepository<Car> carRepo)
+        public CarsService(IEfGenericRepository<Car> carRepo)
         {
             if (carRepo == null)
             {

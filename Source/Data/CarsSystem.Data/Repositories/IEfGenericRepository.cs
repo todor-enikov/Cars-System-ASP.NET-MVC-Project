@@ -2,7 +2,7 @@
 
 namespace CarsSystem.Data.Repositories
 {
-    public interface IRepository<T>
+    public interface IEfGenericRepository<T>
           where T : class
     {
         IEnumerable<T> All();
