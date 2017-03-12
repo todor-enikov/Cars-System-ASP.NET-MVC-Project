@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Services", "Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common\Common.csproj", "{F4747700-A6CA-44A7-8876-E47941D6D34F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Tests", "Tests\CarsSystem.Tests\CarsSystem.Tests.csproj", "{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +58,6 @@ Global
 		{169F5636-2CE7-47E4-88DE-9DEB109E1CAC} = {51FDA9FA-267A-48F1-8F21-DB67ACCD241B}
 		{EF373982-2CDE-4897-BFB5-932595EEFA12} = {019A7910-7246-4081-9FA2-C2210387F8C8}
 		{F4747700-A6CA-44A7-8876-E47941D6D34F} = {B9085B99-B60F-419F-9531-6BF5B1152D89}
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E} = {B995ECC4-1107-43EE-A928-A266AD74F6DB}
 	EndGlobalSection
 EndGlobal
