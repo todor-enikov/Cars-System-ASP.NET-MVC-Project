@@ -68,9 +68,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             // Arrange
             var listOfCars = new List<Car>
             {
-                new Car() { Id=1, Manufacturer="VW", Model="Golf",  },
-                new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
-                new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
+                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105",  }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);
@@ -87,7 +87,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void CarsService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             // Arrange
-            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.GetById(2)).Returns(car);
             var service = new CarsService(mockedRepo.Object);
@@ -103,7 +103,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void CarsService_VerifyTheMethodAddCar_IsCalled_WhenPassedParametersAreCorrect()
         {
             // Arrange
-            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.Add(car)).Verifiable();
             var service = new CarsService(mockedRepo.Object);
@@ -121,9 +121,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             // Arrange
             var listOfCars = new List<Car>
             {
-                new Car() { Id=1, Manufacturer="VW", Model="Golf",  },
-                new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
-                new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
+                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105",  }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);
@@ -140,7 +140,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void CarsService_GetCarByIdWorksProperly_WhenPassedParametersAreCorrect()
         {
             // Arrange
-            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.GetById(1)).Returns(car);
             var service = new CarsService(mockedRepo.Object);
@@ -159,9 +159,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
             var listOfCars = new List<Car>
             {
-                new Car() { Id=1, Manufacturer="VW", Model="Golf", UserId="test" },
-                new Car() { Id=2, Manufacturer="BMW", Model="e40", UserId="test1" },
-                new Car() { Id=3, Manufacturer="Lada", Model="2105", UserId="test2" }
+                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", UserId="test" },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", UserId="test1" },
+                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", UserId="test2" }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);
@@ -169,7 +169,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 
             // Act
             var actualResult = service.GetCarId(user);
-            var expectedResult = 1;
+            var expectedResult = listOfCars[0].Id;
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
