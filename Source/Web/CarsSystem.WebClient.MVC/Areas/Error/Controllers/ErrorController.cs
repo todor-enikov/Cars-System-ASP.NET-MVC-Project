@@ -8,8 +8,27 @@ namespace CarsSystem.WebClient.MVC.Areas.Error.Controllers
 {
     public class ErrorController : Controller
     {
-        // GET: Error/Error
-        public ActionResult Index()
+        public ActionResult NotFound()
+        {
+            return View();
+        }
+
+        public ActionResult Forbidden()
+        {
+            return View();
+        }
+
+        public ActionResult InternalServerError()
+        {
+            return View();
+        }
+
+        public ActionResult UnAuthorized()
+        {
+            return View();
+        }
+
+        public ActionResult BadRequest()
         {
             return View();
         }
