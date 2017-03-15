@@ -7,7 +7,7 @@ namespace CarsSystem.Data.Models
     public class Car
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [MinLength(2)]
