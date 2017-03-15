@@ -37,7 +37,7 @@ namespace CarsSystem.Services
             this.carRepo.SaveChanges();
         }
 
-        public int GetCarId(User user)
+        public Guid GetCarId(User user)
         {
             var result = this.GetAllCars()
                              .FirstOrDefault(c => c.UserId == user.Id);

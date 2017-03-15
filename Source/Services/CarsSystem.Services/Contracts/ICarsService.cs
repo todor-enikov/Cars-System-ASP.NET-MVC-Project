@@ -1,4 +1,5 @@
 ﻿using CarsSystem.Data.Models;
+using System;
 using System.Collections.Generic;
 
 namespace CarsSystem.Services.Contracts
@@ -8,6 +9,6 @@ namespace CarsSystem.Services.Contracts
         IEnumerable<Car> GetAllCars();
         Car GetCarById(int id);
         void AddCar(Car carToAdd);
-        int GetCarId(User user);
+        Guid GetCarId(User user);
     }
 }
