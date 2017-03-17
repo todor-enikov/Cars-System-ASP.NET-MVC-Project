@@ -185,6 +185,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AddUserController.cs" />
+    <Compile Include="Areas\Administration\Controllers\AllCarsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\AllUsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\FilterController.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
@@ -226,6 +228,8 @@
     <Content Include="Areas\Administration\Views\Filter\FilterByAnnualCheckUp.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\FilterByVignette.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\FilterByInsurance.cshtml" />
+    <Content Include="Areas\Administration\Views\AllCars\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\AllUsers\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
