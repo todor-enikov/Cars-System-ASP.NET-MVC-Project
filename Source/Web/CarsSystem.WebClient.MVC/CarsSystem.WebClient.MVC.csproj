@@ -185,6 +185,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AddUserController.cs" />
+    <Compile Include="Areas\Administration\Controllers\FilterController.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -213,7 +214,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Error\Views\web.config" />
     <Content Include="Areas\Error\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Error\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Error\Views\Error\Forbidden.cshtml" />
     <Content Include="Areas\Error\Views\Error\NotFound.cshtml" />
     <Content Include="Areas\Error\Views\Error\InternalServerError.cshtml" />
@@ -223,6 +223,7 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\AddUser\AddUser.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -258,6 +259,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Error\Models\" />
+    <Folder Include="Areas\Error\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
