@@ -13,6 +13,8 @@ namespace CarsSystem.WebClient.MVC
     {
         protected void Application_Start()
         {
+            ViewEngineConfig.RegisterViewEngine(ViewEngines.Engines);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
