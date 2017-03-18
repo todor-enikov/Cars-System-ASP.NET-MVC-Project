@@ -14,92 +14,92 @@
         {
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.Username, "Username: ")
+                    @Html.LabelFor(m => m.User.Username, "Username: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.Username, new { id = "UsernameTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Username)
+                    @Html.TextBoxFor(m => m.User.Username, new { id = "UsernameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Username)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.FirstName, "First name: ")
+                    @Html.LabelFor(m => m.User.FirstName, "First name: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.FirstName, new { id = "FirstNameTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.FirstName)
+                    @Html.TextBoxFor(m => m.User.FirstName, new { id = "FirstNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.FirstName)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.SecondName, "Second name: ")
+                    @Html.LabelFor(m => m.User.SecondName, "Second name: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.SecondName, new { id = "SecondNameTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.SecondName)
+                    @Html.TextBoxFor(m => m.User.SecondName, new { id = "SecondNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.SecondName)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.LastName, "Last name: ")
+                    @Html.LabelFor(m => m.User.LastName, "Last name: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.LastName, new { id = "LastNameTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.LastName)
+                    @Html.TextBoxFor(m => m.User.LastName, new { id = "LastNameTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.LastName)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.Egn, "Egn: ")
+                    @Html.LabelFor(m => m.User.Egn, "Egn: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.Egn, new { id = "EGNTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Egn)
+                    @Html.TextBoxFor(m => m.User.Egn, new { id = "EGNTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Egn)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.NumberOfIdCard, "Number of Id card: ")
+                    @Html.LabelFor(m => m.User.NumberOfIdCard, "Number of Id card: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.NumberOfIdCard, new { id = "NumberOfIdCardTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.NumberOfIdCard)
+                    @Html.TextBoxFor(m => m.User.NumberOfIdCard, new { id = "NumberOfIdCardTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.NumberOfIdCard)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.DateOfIssue, "Date of issue: ")
+                    @Html.LabelFor(m => m.User.DateOfIssue, "Date of issue: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.DateOfIssue, new { id = "IssueTextBox", @class = "form-control datepicker" })
-                    @Html.ValidationMessageFor(m => m.DateOfIssue)
+                    @Html.TextBoxFor(m => m.User.DateOfIssue, new { id = "IssueTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.User.DateOfIssue)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.City, "City: ")
+                    @Html.LabelFor(m => m.User.City, "City: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.City, new { id = "CityTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.City)
+                    @Html.TextBoxFor(m => m.User.City, new { id = "CityTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.City)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.PhoneNumber, "Phone number: ")
+                    @Html.LabelFor(m => m.User.PhoneNumber, "Phone number: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.PhoneNumber, new { id = "PhoneTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.PhoneNumber)
+                    @Html.TextBoxFor(m => m.User.PhoneNumber, new { id = "PhoneTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.PhoneNumber)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.Email, "E-mail: ")
+                    @Html.LabelFor(m => m.User.Email, "E-mail: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.Email, new { id = "EmailTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.User.Email, new { id = "EmailTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.User.Email)
                 </div>
             </div>
             <br />
@@ -107,111 +107,111 @@
             <br />
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.Manufacturer, "Manufacturer: ")
+                    @Html.LabelFor(m => m.Car.Manufacturer, "Manufacturer: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.Manufacturer, new { id = "ManufacturerTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Manufacturer)
+                    @Html.TextBoxFor(m => m.Car.Manufacturer, new { id = "ManufacturerTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.Manufacturer)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.Model, "Model: ")
+                    @Html.LabelFor(m => m.Car.Model, "Model: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.Model, new { id = "ModelTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Model)
+                    @Html.TextBoxFor(m => m.Car.Model, new { id = "ModelTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.Model)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.TypeofEngine, "Type of engine: ")
+                    @Html.LabelFor(m => m.Car.TypeofEngine, "Type of engine: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.EnumDropDownListFor(m => m.TypeofEngine, new { id = "TypeOfEngineDropDownList", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.TypeofEngine)
+                    @Html.EnumDropDownListFor(m => m.Car.TypeofEngine, new { id = "TypeOfEngineDropDownList", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.TypeofEngine)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.RegistrationNumber, "Registration number: ")
+                    @Html.LabelFor(m => m.Car.RegistrationNumber, "Registration number: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.RegistrationNumber, new { id = "RegistrationTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.RegistrationNumber)
+                    @Html.TextBoxFor(m => m.Car.RegistrationNumber, new { id = "RegistrationTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.RegistrationNumber)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.VINNumber, "VIN number: ")
+                    @Html.LabelFor(m => m.Car.VINNumber, "VIN number: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.VINNumber, new { id = "VINTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.VINNumber)
+                    @Html.TextBoxFor(m => m.Car.VINNumber, new { id = "VINTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.VINNumber)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.CountOfTyres, "Count of tyres: ")
+                    @Html.LabelFor(m => m.Car.CountOfTyres, "Count of tyres: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.CountOfTyres, new { id = "CountOfTyresTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CountOfTyres)
+                    @Html.TextBoxFor(m => m.Car.CountOfTyres, new { id = "CountOfTyresTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.CountOfTyres)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.CountOfDoors, "Count of doors: ")
+                    @Html.LabelFor(m => m.Car.CountOfDoors, "Count of doors: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.CountOfDoors, new { id = "CountOfDoorsTextBox", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.CountOfDoors)
+                    @Html.TextBoxFor(m => m.Car.CountOfDoors, new { id = "CountOfDoorsTextBox", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.CountOfDoors)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.TypeOfCar, "Type of car: ")
+                    @Html.LabelFor(m => m.Car.TypeOfCar, "Type of car: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.EnumDropDownListFor(m => m.TypeOfCar, new { id = "TypeOfCarDropDownList", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.TypeOfCar)
+                    @Html.EnumDropDownListFor(m => m.Car.TypeOfCar, new { id = "TypeOfCarDropDownList", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Car.TypeOfCar)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.YearOfManufactoring, "Year of manufactoring: ")
+                    @Html.LabelFor(m => m.Car.YearOfManufactoring, "Year of manufactoring: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.YearOfManufactoring, new { id = "ManufactoringYearTextBox", @class = "form-control datepicker" })
-                    @Html.ValidationMessageFor(m => m.YearOfManufactoring)
+                    @Html.TextBoxFor(m => m.Car.YearOfManufactoring, new { id = "ManufactoringYearTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.YearOfManufactoring)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.ValidUntilAnnualCheckUp, "Valid until annual check up: ")
+                    @Html.LabelFor(m => m.Car.ValidUntilAnnualCheckUp, "Valid until annual check up: ")
 
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.ValidUntilAnnualCheckUp, new { id = "CheckUpTextBox", @class = "form-control datepicker" })
-                    @Html.ValidationMessageFor(m => m.ValidUntilAnnualCheckUp)
+                    @Html.TextBoxFor(m => m.Car.ValidUntilAnnualCheckUp, new { id = "CheckUpTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilAnnualCheckUp)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.ValidUntilVignette, "Valid until vignette: ")
+                    @Html.LabelFor(m => m.Car.ValidUntilVignette, "Valid until vignette: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.ValidUntilVignette, new { id = "VignetteTextBox", @class = "form-control datepicker" })
-                    @Html.ValidationMessageFor(m => m.ValidUntilVignette)
+                    @Html.TextBoxFor(m => m.Car.ValidUntilVignette, new { id = "VignetteTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilVignette)
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-md-5 text-right">
-                    @Html.LabelFor(m => m.ValidUntilInsurance, "Valid until insurance: ")
+                    @Html.LabelFor(m => m.Car.ValidUntilInsurance, "Valid until insurance: ")
                 </div>
                 <div class="col-md-4">
-                    @Html.TextBoxFor(m => m.ValidUntilInsurance, new { id = "InsuranceTextBox", @class = "form-control datepicker" })
-                    @Html.ValidationMessageFor(m => m.ValidUntilInsurance)
+                    @Html.TextBoxFor(m => m.Car.ValidUntilInsurance, new { id = "InsuranceTextBox", @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.Car.ValidUntilInsurance)
                 </div>
             </div>
             <br />

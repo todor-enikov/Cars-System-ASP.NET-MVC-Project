@@ -1,10 +1,14 @@
 ﻿using CarsSystem.Auth;
+using CarsSystem.Data;
 using CarsSystem.Data.Models;
+using CarsSystem.Data.Repositories;
+using CarsSystem.Services;
 using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models;
 using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,15 +22,15 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         private SignInManager _signInManager;
         private UserManager _userManager;
         private ICarsService service;
-        public AddUserController()
+        public AddUserController(ICarsService service)
         {
+            this.service = service;
         }
 
-        public AddUserController(UserManager userManager, SignInManager signInManager, ICarsService service)
+        public AddUserController(UserManager userManager, SignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
-            this.service = service;
         }
 
         public SignInManager SignInManager
@@ -53,17 +57,6 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             }
         }
 
-        public ICarsService Service
-        {
-            get
-            {
-                return this.service;
-            }
-            set
-            {
-                this.service = value;
-            }
-        }
         // GET: Administration/AddUser
         [HttpGet]
         public ActionResult AddUser()
@@ -78,43 +71,44 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             var userToAdd = new User()
             {
-                UserName = receivedModel.Username,
-                FirstName = receivedModel.FirstName,
-                SecondName = receivedModel.SecondName,
-                LastName = receivedModel.LastName,
-                EGN = receivedModel.Egn,
-                NumberOfIdCard = receivedModel.NumberOfIdCard,
-                DateOfIssue = receivedModel.DateOfIssue,
-                City = receivedModel.City,
-                PhoneNumber = receivedModel.PhoneNumber,
-                Email = receivedModel.Email
+                UserName = receivedModel.User.Username,
+                FirstName = receivedModel.User.FirstName,
+                SecondName = receivedModel.User.SecondName,
+                LastName = receivedModel.User.LastName,
+                EGN = receivedModel.User.Egn,
+                NumberOfIdCard = receivedModel.User.NumberOfIdCard,
+                DateOfIssue = receivedModel.User.DateOfIssue,
+                City = receivedModel.User.City,
+                PhoneNumber = receivedModel.User.PhoneNumber,
+                Email = receivedModel.User.Email
             };
 
             IdentityResult result = UserManager.Create(userToAdd, "123456");
 
             var carToAdd = new Car()
             {
-                Manufacturer = receivedModel.Manufacturer,
-                Model = receivedModel.Model,
-                TypeOfEngine = receivedModel.TypeofEngine,
-                RegistrationNumber = receivedModel.RegistrationNumber,
-                VINNumber = receivedModel.VINNumber,
-                CountOfTyres = receivedModel.CountOfTyres,
-                CountOfDoors = receivedModel.CountOfDoors,
-                TypeOfCar = receivedModel.TypeOfCar,
-                YearOfManufacturing = receivedModel.YearOfManufactoring,
-                ValidUntilAnnualCheckUp = receivedModel.ValidUntilAnnualCheckUp,
-                ValidUntilVignette = receivedModel.ValidUntilVignette,
-                ValidUntilInsurance = receivedModel.ValidUntilInsurance,
-                UserId = userToAdd.Id
+                Manufacturer = receivedModel.Car.Manufacturer,
+                Model = receivedModel.Car.Model,
+                TypeOfEngine = receivedModel.Car.TypeofEngine,
+                RegistrationNumber = receivedModel.Car.RegistrationNumber,
+                VINNumber = receivedModel.Car.VINNumber,
+                CountOfTyres = receivedModel.Car.CountOfTyres,
+                CountOfDoors = receivedModel.Car.CountOfDoors,
+                TypeOfCar = receivedModel.Car.TypeOfCar,
+                YearOfManufacturing = receivedModel.Car.YearOfManufactoring,
+                ValidUntilAnnualCheckUp = receivedModel.Car.ValidUntilAnnualCheckUp,
+                ValidUntilVignette = receivedModel.Car.ValidUntilVignette,
+                ValidUntilInsurance = receivedModel.Car.ValidUntilInsurance,
+                UserId = userToAdd.Id,
+                Id = Guid.NewGuid()
             };
 
 
             if (result.Succeeded)
             {
                 UserManager.AddToRole(userToAdd.Id, ApplicationConstants.UserRole);
-                Service.AddCar(carToAdd);
-                RedirectToAction("~/Home");
+                this.service.AddCar(carToAdd);
+                return RedirectToAction("Index", "Home", new { area = "" });
             }
             return View(receivedModel);
         }
