@@ -66,7 +66,7 @@ namespace CarsSystem.WebClient.MVC.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICarsSystemDbContext>().To<CarsSystemDbContext>().InRequestScope();
-            kernel.Bind(typeof(IEfGenericRepository<>)).To(typeof(EfGenericRepository<>));
+            kernel.Bind(typeof(IEfGenericRepository<>)).To(typeof(EfGenericRepository<>)).InRequestScope();
 
             kernel.Bind<IUsersService>().To<UsersService>();
             kernel.Bind<ICarsService>().To<CarsService>();
