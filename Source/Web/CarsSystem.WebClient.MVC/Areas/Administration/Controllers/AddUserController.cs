@@ -21,7 +21,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
     {
         private SignInManager _signInManager;
         private UserManager _userManager;
-        private ICarsService service;
+        private readonly ICarsService service;
+
         public AddUserController(ICarsService service)
         {
             this.service = service;
