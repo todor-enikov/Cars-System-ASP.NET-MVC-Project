@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.filterList {
+    list-style-type: none;
+    float: left;
+}
+
+.listitems {
+    display: inline-block;
+    width:auto
+}

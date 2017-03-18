@@ -3,4 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br />
-<h1>All Filters page</h1>
+<div class="row">
+    <br />
+    <div class="well col-md-6 col-md-offset-3">
+        <h1 class="text-center">Choose filter!</h1>
+        <ul class="filterList">
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Annual Check Up", "FilterByAnnualCheckUp")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Vignette", "FilterByVignette")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Insurance", "FilterByInsurance")</li>
+        </ul>
+    </div>
+</div>
