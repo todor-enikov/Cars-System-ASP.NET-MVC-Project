@@ -61,6 +61,10 @@
       <HintPath>..\..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorGenerator.Templating.2.4.7\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -186,11 +190,12 @@
     <Compile Include="App_Start\ViewEngineConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AddUserController.cs" />
-    <Compile Include="Areas\Administration\Controllers\AllCarsController.cs" />
-    <Compile Include="Areas\Administration\Controllers\AllUsersController.cs" />
+    <Compile Include="Areas\Administration\Controllers\CarsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\FilterController.cs" />
     <Compile Include="Areas\Administration\Models\AddUserViewModel.cs" />
     <Compile Include="Areas\Administration\Models\CarViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ShowAllCarsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\UserViewModel.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
@@ -273,8 +278,11 @@
     <Content Include="Areas\Administration\Views\Filter\FilterByAnnualCheckUp.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\FilterByVignette.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\FilterByInsurance.cshtml" />
-    <Content Include="Areas\Administration\Views\AllCars\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\AllUsers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Cars\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
+    <Content Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+    </Content>
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

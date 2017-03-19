@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 {
-    public class AllCarsController : Controller
+    public class UsersController : Controller
     {
-        // GET: Administration/AllCars
+        // GET: Administration/AllUsers
         public ActionResult Index()
         {
             return View();
