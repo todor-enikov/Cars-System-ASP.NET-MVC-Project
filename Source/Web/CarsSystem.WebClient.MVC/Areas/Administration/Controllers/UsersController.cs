@@ -45,7 +45,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         public ActionResult Details(string id)
         {
             var userModelById = this.userService.GetUserById(id);
-            //var caridd = userModelById.Cars.FirstOrDefault().Id;
+            var caridd = userModelById.Cars.FirstOrDefault().Id;
 
             var viewModel = new UserDetailsViewModel()
             {
@@ -59,7 +59,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 City = userModelById.City,
                 PhoneNumber = userModelById.PhoneNumber,
                 Email = userModelById.Email,
-                //CarId = this.carsService.GetCarId(userModelById)
+                CarId = this.carsService.GetCarId(userModelById)
             };
 
             return View(viewModel);
