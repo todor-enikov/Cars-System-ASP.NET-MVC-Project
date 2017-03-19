@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CarsSystem.WebClient.MVC.Areas.Administration.Models
+namespace CarsSystem.WebClient.MVC.Areas.Administration.Models.Cars
 {
     public class ShowAllCarsViewModel
     {
+        public Guid Id { get; set; }
+
         public string Manufacturer { get; set; }
 
         public string Model { get; set; }
