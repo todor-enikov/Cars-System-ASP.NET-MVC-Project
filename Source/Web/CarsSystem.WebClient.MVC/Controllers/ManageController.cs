@@ -33,9 +33,9 @@ namespace CarsSystem.WebClient.MVC.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<SignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -65,14 +65,32 @@ namespace CarsSystem.WebClient.MVC.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = UserManager.FindById(userId);
+
             var model = new IndexViewModel
             {
+                Username = user.UserName,
+                FirstName = user.FirstName,
+                SecondName = user.SecondName,
+                LastName = user.LastName,
+                City = user.City,
+                Email = user.Email.ToString(),
                 HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
+            if (User.IsInRole("User"))
+            {
+                var car = user.Cars.ToList();
+                model.TypeOfCar = car[0].TypeOfCar;
+                model.Manufacturer = car[0].Manufacturer;
+                model.Model = car[0].Model;
+                model.YearOfManufactoring = car[0].YearOfManufacturing;
+                model.ValidUntilAnnualCheckUp = car[0].ValidUntilAnnualCheckUp;
+                model.ValidUntilVignette = car[0].ValidUntilVignette;
+                model.ValidUntilInsurance = car[0].ValidUntilInsurance;
+                model.TypeOfEngine = car[0].TypeOfEngine;
+            }
+
             return View(model);
         }
 
@@ -118,7 +136,7 @@ namespace CarsSystem.WebClient.MVC.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -169,6 +187,6 @@ namespace CarsSystem.WebClient.MVC.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

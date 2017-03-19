@@ -1,27 +1,95 @@
 ﻿@model CarsSystem.WebClient.MVC.Models.IndexViewModel
+
 @{
     ViewBag.Title = "Manage";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-offset-4">
+        <h2>@ViewBag.Title.</h2>
 
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Password:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Change your password", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Create", "SetPassword")
-            }
-            ]
-        </dd>   
-    </dl>
+        <p class="text-success">@ViewBag.StatusMessage</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-horizontal">
+                    <h4>Change your account settings</h4>
+
+                    <dl class="dl-horizontal">
+                        <dt>Username:</dt>
+                        <dd>
+                            @Html.Label(Model.Username)
+                        </dd>
+                        <dt>First name:</dt>
+                        <dd>
+                            @Html.Label(Model.FirstName)
+                        </dd>
+                        <dt>Second name:</dt>
+                        <dd>
+                            @Html.Label(Model.SecondName)
+                        </dd>
+                        <dt>Last name:</dt>
+                        <dd>
+                            @Html.Label(Model.LastName)
+                        </dd>
+                        <dt>City:</dt>
+                        <dd>
+                            @Html.Label(Model.City)
+                        </dd>
+                        <dt>Email:</dt>
+                        <dd>
+                            @Html.Label(Model.Email)
+                        </dd>
+                        @if (System.Web.HttpContext.Current.User.IsInRole("User"))
+                        {
+                            <dt>Car's type:</dt>
+                            <dd>
+                                @Html.Label(Model.TypeOfCar.ToString())
+                            </dd>
+                            <dt>Car manufacturer:</dt>
+                            <dd>
+                                @Html.Label(Model.Manufacturer)
+                            </dd>
+                            <dt>Car model:</dt>
+                            <dd>
+                                @Html.Label(Model.Model)
+                            </dd>
+                            <dt>Car's year of manufactoring:</dt>
+                            <dd>
+                                @Html.Label(Model.YearOfManufactoring.ToString("dd/MM/yyyy"))
+                            </dd>
+                            <dt>Annual check valid until:</dt>
+                            <dd>
+                                @Html.Label(Model.ValidUntilAnnualCheckUp.ToString("dd/MM/yyyy"))
+                            </dd>
+                            <dt>Vignette valid until:</dt>
+                            <dd>
+                                @Html.Label(Model.ValidUntilVignette.ToString("dd/MM/yyyy"))
+                            </dd>
+                            <dt>Insurance valid until:</dt>
+                            <dd>
+                                @Html.Label(Model.ValidUntilInsurance.ToString("dd/MM/yyyy"))
+                            </dd>
+                            <dt>Car's type of engine:</dt>
+                            <dd>
+                                @Html.Label(Model.TypeOfEngine.ToString())
+                            </dd>
+                        }
+                        <dt>Password:</dt>
+                        <dd>
+                            [
+                            @if (Model.HasPassword)
+                            {
+                                @Html.ActionLink("Change your password", "ChangePassword")
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Create", "SetPassword")
+                            }
+                            ]
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
