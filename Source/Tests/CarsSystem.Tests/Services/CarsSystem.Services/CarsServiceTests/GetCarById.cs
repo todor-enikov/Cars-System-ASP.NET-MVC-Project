@@ -11,28 +11,28 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
     public class GetCarById
     {
         [Test]
-        public void CarsService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
+        public void VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             // Arrange
-            var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
+            var car = new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
-            mockedRepo.Setup(m => m.GetById(2)).Returns(car);
+            mockedRepo.Setup(m => m.GetById(car.Id)).Returns(car);
             var service = new CarsService(mockedRepo.Object);
 
             // Act
             service.GetCarById(car.Id);
 
             // Assert
-            mockedRepo.Verify(m => m.GetById(1), Times.Exactly(1));
+            mockedRepo.Verify(m => m.GetById(car.Id), Times.Exactly(1));
         }
 
         [Test]
         public void WorksProperly_WhenPassedParametersAreCorrect()
         {
             // Arrange
-            var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
+            var car = new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
-            mockedRepo.Setup(m => m.GetById(1)).Returns(car);
+            mockedRepo.Setup(m => m.GetById(car.Id)).Returns(car);
             var service = new CarsService(mockedRepo.Object);
 
             // Act
