@@ -1,4 +1,4 @@
-﻿@model List<CarsSystem.Data.Models.Car>
+﻿@model List<CarsSystem.WebClient.MVC.Areas.Administration.Models.Cars.ShowAllCarsViewModel>
 
 @{
     ViewBag.Title = "All cars";
@@ -20,9 +20,8 @@
     columns: grid.Columns(
         grid.Column("Manufacturer", "Manufacturer"),
         grid.Column("Model", "Model"),
-        grid.Column("RegistrationNumber", "Registration number")
-
-
-      ));
+        grid.Column("RegistrationNumber", "Registration number"),
+        grid.Column(columnName: "Details", format: (item) => Html.ActionLink("Go to details", "Details", "Cars", new { id = item.Id }, null))
+      ))
     </div>
 </div>
