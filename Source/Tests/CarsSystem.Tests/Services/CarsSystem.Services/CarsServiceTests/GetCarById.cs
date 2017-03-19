@@ -20,7 +20,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             var service = new CarsService(mockedRepo.Object);
 
             // Act
-            service.GetCarById(1);
+            service.GetCarById(car.Id);
 
             // Assert
             mockedRepo.Verify(m => m.GetById(1), Times.Exactly(1));
@@ -36,7 +36,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             var service = new CarsService(mockedRepo.Object);
 
             // Act
-            var result = service.GetCarById(1);
+            var result = service.GetCarById(car.Id);
 
             // Assert
             Assert.AreEqual(car.Manufacturer, result.Manufacturer);
