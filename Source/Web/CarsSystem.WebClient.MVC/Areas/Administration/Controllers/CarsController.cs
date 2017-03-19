@@ -63,5 +63,33 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             return View(viewModel);
         }
+
+        [HttpPost]
+        public ActionResult Search(string vinNumber)
+        {
+
+            if (string.IsNullOrEmpty(vinNumber))
+            {
+                return RedirectToAction("InternalServer", "Error", new { area = "Error" });
+            }
+
+            var carModel = this.service.GetCarByVinNumber(vinNumber).ToList();
+            var viewModel = new List<ShowAllCarsViewModel>();
+
+            foreach (var car in carModel)
+            {
+                var currentUser = new ShowAllCarsViewModel()
+                {
+                    Id = car.Id,
+                    Manufacturer = car.Manufacturer,
+                    Model = car.Model,
+                    RegistrationNumber = car.RegistrationNumber
+                };
+
+                viewModel.Add(currentUser);
+            }
+
+            return View("Index", viewModel);
+        }
     }
 }
