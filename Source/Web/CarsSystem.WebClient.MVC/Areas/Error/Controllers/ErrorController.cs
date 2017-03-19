@@ -18,7 +18,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Error.Controllers
             return View();
         }
 
-        public ActionResult InternalServerError()
+        public ActionResult InternalServer()
         {
             return View();
         }
