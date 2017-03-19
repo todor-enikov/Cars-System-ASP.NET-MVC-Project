@@ -185,7 +185,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\NinjectConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ViewEngineConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
@@ -194,8 +194,11 @@
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\FilterController.cs" />
     <Compile Include="Areas\Administration\Models\AddUserViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\Cars\CarDetailsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\CarViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\ShowAllCarsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\Cars\ShowAllCarsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\Users\ShowAllUsersViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\Users\UserDetailsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\UserViewModel.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
@@ -268,7 +271,7 @@
     <Content Include="Areas\Error\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Error\Views\Error\Forbidden.cshtml" />
     <Content Include="Areas\Error\Views\Error\NotFound.cshtml" />
-    <Content Include="Areas\Error\Views\Error\InternalServerError.cshtml" />
+    <Content Include="Areas\Error\Views\Error\InternalServer.cshtml" />
     <Content Include="Areas\Error\Views\Error\UnAuthorized.cshtml" />
     <Content Include="Areas\Error\Views\Error\BadRequest.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
@@ -283,6 +286,9 @@
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
     </Content>
+    <Content Include="Areas\Administration\Views\Cars\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AllUsers.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -320,7 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Error\Models\" />
     <Folder Include="Areas\Error\Views\Shared\" />
   </ItemGroup>
