@@ -10,5 +10,6 @@ namespace CarsSystem.Services.Contracts
         Car GetCarById(Guid id);
         void AddCar(Car carToAdd);
         Guid GetCarId(User user);
+        IEnumerable<Car> GetCarByVinNumber(string VinNumber);
     }
 }

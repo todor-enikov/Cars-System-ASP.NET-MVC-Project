@@ -44,5 +44,13 @@ namespace CarsSystem.Services
 
             return result.Id;
         }
+
+        public IEnumerable<Car> GetCarByVinNumber(string VinNumber)
+        {
+            var result = this.GetAllCars()
+                             .Where(c => c.VINNumber == VinNumber);
+
+            return result;
+        }
     }
 }
