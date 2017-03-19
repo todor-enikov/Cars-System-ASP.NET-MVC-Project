@@ -1,5 +1,5 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CarsSystem.WebClient.MVC.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(CarsSystem.WebClient.MVC.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CarsSystem.WebClient.MVC.App_Start.NinjectConfig), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(CarsSystem.WebClient.MVC.App_Start.NinjectConfig), "Stop")]
 
 namespace CarsSystem.WebClient.MVC.App_Start
 {
@@ -15,7 +15,7 @@ namespace CarsSystem.WebClient.MVC.App_Start
     using Services.Contracts;
     using Services;
 
-    public static class NinjectWebCommon 
+    public static class NinjectConfig 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
@@ -66,7 +66,7 @@ namespace CarsSystem.WebClient.MVC.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICarsSystemDbContext>().To<CarsSystemDbContext>().InRequestScope();
-            kernel.Bind(typeof(IEfGenericRepository<>)).To(typeof(EfGenericRepository<>)).InRequestScope();
+            kernel.Bind(typeof(IEfGenericRepository<>)).To(typeof(EfGenericRepository<>));
 
             kernel.Bind<IUsersService>().To<UsersService>();
             kernel.Bind<ICarsService>().To<CarsService>();
