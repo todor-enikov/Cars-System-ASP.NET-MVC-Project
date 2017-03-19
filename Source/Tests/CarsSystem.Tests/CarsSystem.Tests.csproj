@@ -97,6 +97,7 @@
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\AddCar.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetAllCars.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetCarById.cs" />
+    <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetCarByVinNumber.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetCarId.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\Should.cs" />
     <Compile Include="Services\CarsSystem.Services\FilterServiceTests\FilterExpiringAnnualCheckUp.cs" />
