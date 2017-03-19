@@ -26,7 +26,7 @@ namespace CarsSystem.Services
             return this.carRepo.All();
         }
 
-        public Car GetCarById(int id)
+        public Car GetCarById(Guid id)
         {
             return this.carRepo.GetById(id);
         }
