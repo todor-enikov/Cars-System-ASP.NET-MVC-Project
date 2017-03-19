@@ -65,10 +65,13 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
         public ActionResult Search(string search)
         {
+            long result;
+            var parsed = long.TryParse(search, out result);
 
-            if (string.IsNullOrEmpty(search))
+            if (string.IsNullOrEmpty(search) || parsed == false)
             {
                 return RedirectToAction("InternalServer", "Error", new { area = "Error" });
             }

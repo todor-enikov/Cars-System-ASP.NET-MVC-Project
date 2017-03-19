@@ -289,6 +289,8 @@
     <Content Include="Areas\Administration\Views\Cars\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_AllUsers.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_NoResults.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AllCars.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
