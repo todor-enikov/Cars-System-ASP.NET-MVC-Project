@@ -47,6 +47,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models
         public string PhoneNumber { get; set; }
 
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
     }
 }
