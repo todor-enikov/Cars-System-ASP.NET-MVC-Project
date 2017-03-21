@@ -26,10 +26,9 @@
     </div>
 </div>
 <br />
-<br />
 <div class="row">
     <div class="col-md-12 col-md-offset-2">
-        @using (Html.BeginForm("FilterByVignette", "Filter", FormMethod.Post))
+        @using (Ajax.BeginForm("FilterByVignette", null))
         {
             <div class="col-md-1 text-right">
                 @Html.Label("Subject: ", new { @class = "control-label" })

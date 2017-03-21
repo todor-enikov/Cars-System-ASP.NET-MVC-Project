@@ -26,10 +26,9 @@
     </div>
 </div>
 <br />
-<br />
 <div class="row">
     <div class="col-md-12 col-md-offset-2">
-        @using (Html.BeginForm("FilterByAnnualCheckUp", "Filter", FormMethod.Post))
+        @using (Ajax.BeginForm("FilterByAnnualCheckUp", null))
         {
             <div class="col-md-1 text-right">
                 @Html.Label("Subject: ", new { @class = "control-label" })
