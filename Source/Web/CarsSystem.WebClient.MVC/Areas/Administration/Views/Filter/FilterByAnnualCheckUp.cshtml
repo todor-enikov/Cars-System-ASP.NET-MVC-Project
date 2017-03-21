@@ -5,24 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
-}
 <br />
 <h1 class="text-center">All cars which annual check up expires soon!</h1>
 <br />
 <div class="row">
     <div class="col-md-12">
-        @grid.GetHtml(
-    tableStyle: "table table-striped table-hover form-group",
-    headerStyle: "text-center",
-    columns: grid.Columns(
-        grid.Column("Manufacturer", "Manufacturer"),
-        grid.Column("Model", "Model"),
-        grid.Column("RegistrationNumber", "Registration number"),
-        grid.Column("VINNumber", "Registration number"),
-        grid.Column("ExpirationDate", "Valid until", format: (item) => string.Format("{0:dd/MM/yyyy}", item.ExpirationDate))
-      ))
+        @Html.Partial("_FilterGrid")
     </div>
 </div>
 <br />

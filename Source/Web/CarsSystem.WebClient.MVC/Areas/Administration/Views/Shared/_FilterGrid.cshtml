@@ -1,0 +1,16 @@
+﻿@model  List<CarsSystem.WebClient.MVC.Areas.Administration.Models.Filter.FilterViewModel>
+
+@{
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
+}
+
+@grid.GetHtml(
+    tableStyle: "table table-striped table-hover form-group",
+    headerStyle: "text-center",
+    columns: grid.Columns(
+        grid.Column("Manufacturer", "Manufacturer"),
+        grid.Column("Model", "Model"),
+        grid.Column("RegistrationNumber", "Registration number"),
+        grid.Column("VINNumber", "Registration number"),
+        grid.Column("ExpirationDate", "Valid until", format: (item) => string.Format("{0:dd/MM/yyyy}", item.ExpirationDate))
+      ))
