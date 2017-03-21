@@ -1,12 +1,15 @@
-﻿<li>
-    @Html.ActionLink("Filter taxes", "Index", "Filter", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
-</li>
-<li>
-    @Html.ActionLink("All customers", "Index", "Users", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
-</li>
-<li>
-    @Html.ActionLink("All cars", "Index", "Cars", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
-</li>
-<li>
-    @Html.ActionLink("Add customer and car", "AddUser", "AddUser", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
-</li>
+﻿@if (System.Web.HttpContext.Current.User.IsInRole("Admin"))
+{
+    <li>
+        @Html.ActionLink("Filter taxes", "Index", "Filter", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
+    </li>
+    <li>
+        @Html.ActionLink("All customers", "Index", "Users", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
+    </li>
+    <li>
+        @Html.ActionLink("All cars", "Index", "Cars", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
+    </li>
+    <li>
+        @Html.ActionLink("Add customer and car", "AddUser", "AddUser", new { area = "Administration" }, htmlAttributes: new { title = "Manage" })
+    </li>
+}
