@@ -198,7 +198,6 @@
     <Compile Include="Areas\Administration\Models\CarViewModel.cs" />
     <Compile Include="Areas\Administration\Models\Cars\ShowAllCarsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\Filter\FilterViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\MailViewModel.cs" />
     <Compile Include="Areas\Administration\Models\Users\ShowAllUsersViewModel.cs" />
     <Compile Include="Areas\Administration\Models\Users\UserDetailsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\UserViewModel.cs" />
