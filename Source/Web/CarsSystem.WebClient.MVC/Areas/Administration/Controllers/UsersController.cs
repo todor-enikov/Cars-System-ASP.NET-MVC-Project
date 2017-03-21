@@ -1,5 +1,6 @@
 ﻿using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models.Users;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 {
+    [Authorize(Roles = ApplicationConstants.AdminRole)]
     public class UsersController : Controller
     {
         private readonly IUsersService userService;

@@ -10,27 +10,27 @@ namespace CarsSystem.WebClient.MVC.Areas.Error.Controllers
     {
         public ActionResult NotFound()
         {
-            return View();
+            return View("NotFound");
         }
 
         public ActionResult Forbidden()
         {
-            return View();
+            return View("Forbidden");
         }
 
         public ActionResult InternalServer()
         {
-            return View();
+            return View("InternalServer");
         }
 
         public ActionResult UnAuthorized()
         {
-            return View();
+            return View("UnAuthorized");
         }
 
         public ActionResult BadRequest()
         {
-            return View();
+            return View("BadRequest");
         }
     }
 }

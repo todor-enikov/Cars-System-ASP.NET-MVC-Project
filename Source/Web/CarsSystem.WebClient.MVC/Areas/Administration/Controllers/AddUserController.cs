@@ -17,6 +17,7 @@ using System.Web.Mvc;
 
 namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 {
+    [Authorize(Roles = ApplicationConstants.AdminRole)]
     public class AddUserController : Controller
     {
         private SignInManager _signInManager;
