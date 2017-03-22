@@ -22,6 +22,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 60 * 60)]
         public ActionResult Index()
         {
             return View();

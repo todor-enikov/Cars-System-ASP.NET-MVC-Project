@@ -61,6 +61,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         // GET: Administration/AddUser
         [HttpGet]
+        [OutputCache(Duration = 10)]
         public ActionResult AddUser()
         {
             return View();
