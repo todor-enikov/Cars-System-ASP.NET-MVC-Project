@@ -108,6 +108,14 @@
         </div>
         <div class="row form-group">
             <div class="col-md-6 text-right">
+                @Html.Label("Edit car's details: ")
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Edit", "Edit", "Cars", new { id = Model.Id }, null)
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
                 @Html.Label("Check car's owner: ")
             </div>
             <div class="col-md-6">
