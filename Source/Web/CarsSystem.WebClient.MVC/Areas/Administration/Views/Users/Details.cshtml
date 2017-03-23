@@ -91,6 +91,14 @@
             </div>
             <div class="row form-group">
                 <div class="col-md-6 text-right">
+                    @Html.Label("Edit user's details: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.ActionLink("Edit", "Edit", "Users", new { id = Model.Id }, null)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
                     @Html.Label("Check owner's car: ")
                 </div>
                 <div class="col-md-6">
