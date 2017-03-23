@@ -52,5 +52,11 @@ namespace CarsSystem.Services
 
             return result;
         }
+
+        public void Update(Car car)
+        {
+            this.carRepo.Update(car);
+            this.carRepo.SaveChanges();
+        }
     }
 }
