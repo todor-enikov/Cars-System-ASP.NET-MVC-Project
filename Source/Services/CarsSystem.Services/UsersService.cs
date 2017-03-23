@@ -44,5 +44,11 @@ namespace CarsSystem.Services
 
             return result.Id;
         }
+
+        public void Update(User user)
+        {
+            this.userRepo.Update(user);
+            this.userRepo.SaveChanges();
+        }
     }
 }
