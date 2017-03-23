@@ -89,7 +89,7 @@
                     @Html.Label("Year of manufactoring: ")
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.YearOfManufactoring, new { @Value = Model.YearOfManufactoring.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.TextBoxFor(m => m.YearOfManufactoring, new { @Value = Model.YearOfManufactoring.ToString("MM/dd/yyyy"), @class = "form-control datepicker" })
                     @Html.ValidationMessageFor(m => m.YearOfManufactoring)
                 </div>
             </div>
@@ -98,7 +98,7 @@
                     @Html.Label("Annual check up valid until: ")
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.ValidUntilAnnualCheckUp, new { @Value = Model.ValidUntilAnnualCheckUp.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.TextBoxFor(m => m.ValidUntilAnnualCheckUp, new { @Value = Model.ValidUntilAnnualCheckUp.ToString("MM/dd/yyyy"), @class = "form-control datepicker" })
                     @Html.ValidationMessageFor(m => m.ValidUntilAnnualCheckUp)
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     @Html.Label("Vignette valid until: ")
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.ValidUntilVignette, new { @Value = Model.ValidUntilVignette.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.TextBoxFor(m => m.ValidUntilVignette, new { @Value = Model.ValidUntilVignette.ToString("MM/dd/yyyy"), @class = "form-control datepicker" })
                     @Html.ValidationMessageFor(m => m.ValidUntilVignette)
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     @Html.Label("Insurance valid until: ")
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.ValidUntilInsurance, new { @Value = Model.ValidUntilInsurance.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.TextBoxFor(m => m.ValidUntilInsurance, new { @Value = Model.ValidUntilInsurance.ToString("MM/dd/yyyy"), @class = "form-control datepicker" })
                     @Html.ValidationMessageFor(m => m.ValidUntilInsurance)
                 </div>
             </div>
