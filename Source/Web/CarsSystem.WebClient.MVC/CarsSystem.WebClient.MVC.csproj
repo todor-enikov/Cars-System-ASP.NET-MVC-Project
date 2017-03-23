@@ -294,6 +294,7 @@
     <Content Include="Areas\Administration\Views\Shared\_AllCars.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_FilterGrid.cshtml" />
     <Content Include="Areas\Administration\Views\Cars\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

@@ -15,7 +15,7 @@ namespace CarsSystem.WebClient.MVC.Controllers
         }
 
         [HttpGet]
-        [OutputCache]
+        [OutputCache(Duration = 60 * 60)]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

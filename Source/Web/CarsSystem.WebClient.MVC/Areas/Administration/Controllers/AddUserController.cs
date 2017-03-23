@@ -87,7 +87,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             };
 
             IdentityResult result = UserManager.Create(userToAdd, "123456");
-
+            
             var carToAdd = new Car()
             {
                 Manufacturer = receivedModel.Car.Manufacturer,

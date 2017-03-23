@@ -144,7 +144,6 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             this.service.Update(carToUpdate);
 
             return RedirectToAction("Details", "Cars", new { area = "Administration", id = car.Id });
-
         }
     }
 }
