@@ -8,6 +8,7 @@ using Owin;
 using System;
 
 [assembly: OwinStartupAttribute(typeof(CarsSystem.Auth.Startup))]
+
 namespace CarsSystem.Auth
 {
     public class Startup
@@ -38,6 +39,7 @@ namespace CarsSystem.Auth
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
+
             // Use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 

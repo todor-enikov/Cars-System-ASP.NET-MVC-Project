@@ -9,7 +9,6 @@ namespace CarsSystem.Data
         public CarsSystemDbContext()
             : base("CarsSystem")
         {
-
         }
 
         public virtual IDbSet<Car> Cars { get; set; }

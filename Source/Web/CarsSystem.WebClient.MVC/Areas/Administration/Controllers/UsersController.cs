@@ -6,7 +6,6 @@ using CarsSystem.WebClient.MVC.Areas.Administration.Models.Users;
 using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

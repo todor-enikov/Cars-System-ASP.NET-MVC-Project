@@ -18,9 +18,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             // Arrange
             var collectionOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", ValidUntilInsurance=DateTime.Now },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", ValidUntilInsurance = DateTime.Now },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", ValidUntilInsurance = DateTime.Now },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", ValidUntilInsurance = DateTime.Now }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
@@ -39,9 +39,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             // Arrange
             var collectionOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", ValidUntilInsurance=DateTime.Now },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", ValidUntilInsurance = DateTime.Now },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", ValidUntilInsurance = DateTime.Now },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", ValidUntilInsurance = DateTime.Now }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);

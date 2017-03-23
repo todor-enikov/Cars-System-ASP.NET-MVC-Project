@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-using CarsSystem.Data.Models;
+﻿using CarsSystem.Data.Models;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarsSystem.WebClient.MVC.Models
 {

@@ -17,9 +17,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             // Arrange
             var collectionOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", ValidUntilVignette = DateTime.Now, }
             };
 
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
@@ -39,9 +39,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             // Arrange
             var collectionOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", ValidUntilVignette = DateTime.Now, }
             };
 
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
@@ -61,11 +61,10 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             // Arrange
             var collectionOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", ValidUntilVignette = DateTime.Now,  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", ValidUntilVignette = DateTime.Now, }
             };
-
 
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);

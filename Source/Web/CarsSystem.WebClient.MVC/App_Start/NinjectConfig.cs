@@ -3,17 +3,15 @@
 
 namespace CarsSystem.WebClient.MVC.App_Start
 {
-    using System;
-    using System.Web;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
     using Data;
     using Data.Repositories;
-    using Services.Contracts;
+    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+    using Ninject;
+    using Ninject.Web.Common;
     using Services;
+    using Services.Contracts;
+    using System;
+    using System.Web;
 
     public static class NinjectConfig 
     {

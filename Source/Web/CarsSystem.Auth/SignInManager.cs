@@ -11,7 +11,8 @@ namespace CarsSystem.Auth
     {
         public SignInManager(UserManager userManager, IAuthenticationManager authenticationManager) :
             base(userManager, authenticationManager)
-        { }
+        {
+        }
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
         {

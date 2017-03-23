@@ -1,10 +1,6 @@
 ﻿using CarsSystem.Data;
 using CarsSystem.Data.Migrations;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace CarsSystem.WebClient.MVC.App_Start
 {

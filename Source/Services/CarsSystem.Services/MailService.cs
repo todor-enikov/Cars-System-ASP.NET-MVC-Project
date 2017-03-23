@@ -12,18 +12,18 @@ namespace CarsSystem.Services
             foreach (var email in emails)
             {
                 var mail = new MailMessage();
-                var SmtpServer = new SmtpClient();
-                SmtpServer.Credentials = new NetworkCredential("mastikurka@gmail.com", "asenmastikata93");
-                SmtpServer.Port = 587;
-                SmtpServer.Host = "smtp.gmail.com";
+                var smtpServer = new SmtpClient();
+                smtpServer.Credentials = new NetworkCredential("mastikurka@gmail.com", "asenmastikata93");
+                smtpServer.Port = 587;
+                smtpServer.Host = "smtp.gmail.com";
 
-                SmtpServer.EnableSsl = true;
-                SmtpServer.EnableSsl = true;
+                smtpServer.EnableSsl = true;
+                smtpServer.EnableSsl = true;
                 mail.To.Add(email);
                 mail.From = new MailAddress("mastikurka@gmail.com");
                 mail.Subject = subject;
                 mail.Body = content;
-                SmtpServer.Send(mail);
+                smtpServer.Send(mail);
             }
         }
     }

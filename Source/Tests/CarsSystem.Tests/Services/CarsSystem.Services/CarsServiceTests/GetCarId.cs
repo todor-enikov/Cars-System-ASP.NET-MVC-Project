@@ -18,9 +18,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
             var listOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf", UserId="test" },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40", UserId="test1" },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105", UserId="test2" }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf", UserId = "test" },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40", UserId = "test1" },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105", UserId = "test2" }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);

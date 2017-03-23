@@ -17,11 +17,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.UserServiceTests
             var car = new Car() { UserId = "test", Manufacturer = "Trabant", Model = "Iztrebitel" };
             var listOfUser = new List<User>
             {
-                new User() { Id="test", FirstName="Gosho", LastName="Pochivkata" },
-                new User() { Id="test1", FirstName="Monti", LastName="Picha" },
-                new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
-
+                new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" },
+                new User() { Id = "test1", FirstName = "Monti", LastName = "Picha" },
+                new User() { Id = "test2", FirstName = "Marin", LastName = "The hunter" },
             };
+
             var mockedRepo = new Mock<IEfGenericRepository<User>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfUser);
             var service = new UsersService(mockedRepo.Object);

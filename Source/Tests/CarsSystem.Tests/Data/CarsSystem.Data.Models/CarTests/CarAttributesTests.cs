@@ -166,6 +166,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
                                     .GetCustomAttributes(false)
                                     .Where(p => p.GetType() == typeof(RequiredAttribute))
                                     .Any();
+
             // Assert
             Assert.IsTrue(hasAttribute);
         }

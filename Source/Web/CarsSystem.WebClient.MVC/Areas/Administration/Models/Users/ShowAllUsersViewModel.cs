@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CarsSystem.WebClient.MVC.Areas.Administration.Models.Users
+﻿namespace CarsSystem.WebClient.MVC.Areas.Administration.Models.Users
 {
     public class ShowAllUsersViewModel
     {

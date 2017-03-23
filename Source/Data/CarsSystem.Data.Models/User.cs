@@ -17,6 +17,7 @@ namespace CarsSystem.Data.Models
         {
             this.cars = new HashSet<Car>();
         }
+
         [Key]
         public override string Id { get; set; }
 
@@ -67,6 +68,7 @@ namespace CarsSystem.Data.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
+
             // Add custom user claims here
             return userIdentity;
         }

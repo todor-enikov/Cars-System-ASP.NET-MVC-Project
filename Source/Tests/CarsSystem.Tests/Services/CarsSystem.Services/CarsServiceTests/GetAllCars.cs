@@ -18,9 +18,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             // Arrange
             var listOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf",  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40",  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105",  }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105",  }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);
@@ -39,9 +39,9 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             // Arrange
             var listOfCars = new List<Car>
             {
-                new Car() { Id = Guid.NewGuid(), Manufacturer="VW", Model="Golf",  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="BMW", Model="e40",  },
-                new Car() { Id = Guid.NewGuid(), Manufacturer="Lada", Model="2105",  }
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "VW", Model = "Golf",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "BMW", Model = "e40",  },
+                new Car() { Id = Guid.NewGuid(), Manufacturer = "Lada", Model = "2105",  }
             };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
             mockedRepo.Setup(m => m.All()).Returns(listOfCars);

@@ -1,8 +1,5 @@
 ﻿using CarsSystem.Auth;
-using CarsSystem.Data;
 using CarsSystem.Data.Models;
-using CarsSystem.Data.Repositories;
-using CarsSystem.Services;
 using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models;
 using Common;
@@ -10,8 +7,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 

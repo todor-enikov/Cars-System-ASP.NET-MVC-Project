@@ -9,18 +9,21 @@ namespace CarsSystem.Auth
         public const string XsrfKey = "XsrfId";
 
         public const string ProviderNameKey = "providerName";
+
         public static string GetProviderNameFromRequest(HttpRequest request)
         {
             return request.QueryString[ProviderNameKey];
         }
 
         public const string CodeKey = "code";
+
         public static string GetCodeFromRequest(HttpRequest request)
         {
             return request.QueryString[CodeKey];
         }
 
         public const string UserIdKey = "userId";
+
         public static string GetUserIdFromRequest(HttpRequest request)
         {
             return HttpUtility.UrlDecode(request.QueryString[UserIdKey]);
@@ -45,7 +48,7 @@ namespace CarsSystem.Auth
 
         public static void RedirectToReturnUrl(string returnUrl, HttpResponse response)
         {
-            if (!String.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
             {
                 response.Redirect(returnUrl);
             }
