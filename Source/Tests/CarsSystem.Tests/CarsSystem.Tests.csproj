@@ -100,6 +100,7 @@
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetCarByVinNumber.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\GetCarId.cs" />
     <Compile Include="Services\CarsSystem.Services\CarsServiceTests\Should.cs" />
+    <Compile Include="Services\CarsSystem.Services\CarsServiceTests\Update.cs" />
     <Compile Include="Services\CarsSystem.Services\FilterServiceTests\FilterExpiringAnnualCheckUp.cs" />
     <Compile Include="Services\CarsSystem.Services\FilterServiceTests\FilterExpiringInsurance.cs" />
     <Compile Include="Services\CarsSystem.Services\FilterServiceTests\FilterExpiringVignetteCars.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Services\CarsSystem.Services\UserServiceTests\GetUserById.cs" />
     <Compile Include="Services\CarsSystem.Services\UserServiceTests\GetUserId.cs" />
     <Compile Include="Services\CarsSystem.Services\UserServiceTests\Should.cs" />
+    <Compile Include="Services\CarsSystem.Services\UserServiceTests\Update.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

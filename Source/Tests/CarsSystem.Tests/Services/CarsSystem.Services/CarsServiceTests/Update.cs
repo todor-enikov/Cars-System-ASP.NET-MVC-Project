@@ -4,11 +4,15 @@ using CarsSystem.Services;
 using Moq;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
 {
     [TestFixture]
-    public class AddCar
+    public class Update
     {
         [Test]
         public void IsCalled_WhenPassedParametersAreCorrect()
@@ -16,14 +20,14 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.CarsServiceTests
             // Arrange
             var car = new Car() { Id = new Guid(), Manufacturer = "VW", Model = "Golf", };
             var mockedRepo = new Mock<IEfGenericRepository<Car>>();
-            mockedRepo.Setup(m => m.Add(car)).Verifiable();
+            mockedRepo.Setup(c => c.Update(car)).Verifiable();
             var service = new CarsService(mockedRepo.Object);
 
             // Act
-            service.AddCar(car);
+            service.Update(car);
 
             // Assert
-            mockedRepo.Verify(m => m.Add(car), Times.Exactly(1));
+            mockedRepo.Verify(c => c.Update(car), Times.Exactly(1));
         }
     }
 }
