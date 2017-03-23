@@ -1,4 +1,6 @@
-﻿using CarsSystem.Services.Contracts;
+﻿using CarsSystem.Data.Models;
+using CarsSystem.Services.Contracts;
+using CarsSystem.WebClient.MVC.Areas.Administration.Models;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models.Cars;
 using Common;
 using System;
@@ -48,6 +50,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var carModelById = this.service.GetCarById(id);
             var viewModel = new CarDetailsViewModel()
             {
+                Id = carModelById.Id,
                 Manufacturer = carModelById.Manufacturer,
                 Model = carModelById.Model,
                 TypeOfEngine = carModelById.TypeOfEngine,
@@ -92,6 +95,56 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             }
 
             return View("Index", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(Guid id)
+        {
+            var carModelById = this.service.GetCarById(id);
+            var viewModel = new CarViewModel()
+            {
+                Id = carModelById.Id,
+                Manufacturer = carModelById.Manufacturer,
+                Model = carModelById.Model,
+                TypeOfEngine = carModelById.TypeOfEngine,
+                RegistrationNumber = carModelById.RegistrationNumber,
+                VINNumber = carModelById.VINNumber,
+                CountOfTyres = carModelById.CountOfTyres,
+                CountOfDoors = carModelById.CountOfDoors,
+                TypeOfCar = carModelById.TypeOfCar,
+                YearOfManufactoring = carModelById.YearOfManufacturing,
+                ValidUntilAnnualCheckUp = carModelById.ValidUntilAnnualCheckUp,
+                ValidUntilVignette = carModelById.ValidUntilVignette,
+                ValidUntilInsurance = carModelById.ValidUntilVignette
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(CarViewModel car)
+        {
+            var carToUpdate = new Car()
+            {
+                Id = car.Id,
+                Manufacturer = car.Manufacturer,
+                Model = car.Model,
+                TypeOfEngine = car.TypeOfEngine,
+                RegistrationNumber = car.RegistrationNumber,
+                VINNumber = car.VINNumber,
+                CountOfTyres = car.CountOfTyres,
+                CountOfDoors = car.CountOfDoors,
+                TypeOfCar = car.TypeOfCar,
+                YearOfManufacturing = car.YearOfManufactoring,
+                ValidUntilAnnualCheckUp = car.ValidUntilAnnualCheckUp,
+                ValidUntilInsurance = car.ValidUntilInsurance,
+                ValidUntilVignette = car.ValidUntilVignette
+            };
+
+            this.service.Update(carToUpdate);
+
+            return RedirectToAction("Details", "Cars", new { area = "Administration", id = car.Id });
+
         }
     }
 }
