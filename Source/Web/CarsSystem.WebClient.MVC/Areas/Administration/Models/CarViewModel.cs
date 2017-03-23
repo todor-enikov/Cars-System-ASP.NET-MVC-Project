@@ -10,6 +10,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models
 {
     public class CarViewModel
     {
+        public Guid Id { get; set; }
+
         [Required]
         [StringLength(20, ErrorMessage = "{0} should be between {2} and {1} symbols long!", MinimumLength = 2)]
         public string Manufacturer { get; set; }
@@ -19,7 +21,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models
         public string Model { get; set; }
 
         [Required]
-        public EngineType TypeofEngine { get; set; }
+        public EngineType TypeOfEngine { get; set; }
 
         [Required]
         [StringLength(10, ErrorMessage = "{0} should be between {2} and {1} symbols long!", MinimumLength = 4)]

@@ -8,6 +8,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models.Cars
 {
     public class CarDetailsViewModel
     {
+        public Guid Id { get; set; }
+
         public string Manufacturer { get; set; }
 
         public string Model { get; set; }
