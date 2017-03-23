@@ -1,0 +1,147 @@
+﻿@model CarsSystem.WebClient.MVC.Areas.Administration.Models.CarViewModel
+
+@{
+    ViewBag.Title = "All cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+
+<div class="row">
+    <h1 class="text-center">Edit car details page!</h1>
+    <div class="well col-md-6 col-md-offset-3">
+        <br />
+        @using (Html.BeginForm("Edit", "Cars", FormMethod.Post))
+        {
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Manufacturer: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.Manufacturer, new { @Value = Model.Manufacturer, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Manufacturer)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Model: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.Model, new { @Value = Model.Model, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Model)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Type of engine: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.EnumDropDownListFor(m => m.TypeOfEngine, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.TypeOfEngine)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Registration number: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.RegistrationNumber, new { @Value = Model.RegistrationNumber, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.RegistrationNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("VIN number: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.VINNumber, new { @Value = Model.VINNumber, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.VINNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Count of tyres: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.CountOfTyres, new { @Value = Model.CountOfTyres.ToString(), @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CountOfTyres)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Count of doors: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.CountOfDoors, new { @Value = Model.CountOfDoors.ToString(), @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CountOfDoors)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Type of car: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.EnumDropDownListFor(m => m.TypeOfCar, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.TypeOfCar)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Year of manufactoring: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.YearOfManufactoring, new { @Value = Model.YearOfManufactoring.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.YearOfManufactoring)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Annual check up valid until: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.ValidUntilAnnualCheckUp, new { @Value = Model.ValidUntilAnnualCheckUp.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.ValidUntilAnnualCheckUp)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Vignette valid until: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.ValidUntilVignette, new { @Value = Model.ValidUntilVignette.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.ValidUntilVignette)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6 text-right">
+                    @Html.Label("Insurance valid until: ")
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.ValidUntilInsurance, new { @Value = Model.ValidUntilInsurance.ToString("dd/MM/yyyy"), @class = "form-control datepicker" })
+                    @Html.ValidationMessageFor(m => m.ValidUntilInsurance)
+                </div>
+            </div>
+            <br />
+            <div class="text-center">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input type="submit" value="Edit car information!" class="form-control">
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+}

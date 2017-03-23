@@ -92,7 +92,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             {
                 Manufacturer = receivedModel.Car.Manufacturer,
                 Model = receivedModel.Car.Model,
-                TypeOfEngine = receivedModel.Car.TypeofEngine,
+                TypeOfEngine = receivedModel.Car.TypeOfEngine,
                 RegistrationNumber = receivedModel.Car.RegistrationNumber,
                 VINNumber = receivedModel.Car.VINNumber,
                 CountOfTyres = receivedModel.Car.CountOfTyres,
