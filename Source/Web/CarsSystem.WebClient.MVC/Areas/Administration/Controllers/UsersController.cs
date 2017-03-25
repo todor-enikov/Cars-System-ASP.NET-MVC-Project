@@ -6,6 +6,7 @@ using CarsSystem.WebClient.MVC.Areas.Administration.Models.Users;
 using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,16 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         public UsersController(IUsersService usersService, ICarsService carsService)
         {
+            if (usersService == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.UsersServiceErrorMessage);
+            }
+
+            if (carsService == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.CarssServiceErrorMessage);
+            }
+
             this.usersService = usersService;
             this.carsService = carsService;
         }

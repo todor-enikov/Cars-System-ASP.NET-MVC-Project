@@ -1,6 +1,7 @@
 ﻿using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models.Filter;
 using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -15,6 +16,16 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         public FilterController(IFilterService filterService, IMailService mailService)
         {
+            if (filterService == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.FilterServiceErrorMessage);
+            }
+
+            if (mailService == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.MailServiceErrorMessage);
+            }
+
             this.filterService = filterService;
             this.mailService = mailService;
         }

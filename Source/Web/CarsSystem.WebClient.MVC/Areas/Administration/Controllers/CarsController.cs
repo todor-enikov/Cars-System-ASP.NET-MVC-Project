@@ -17,6 +17,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         public CarsController(ICarsService service)
         {
+            if (service == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.CarssServiceErrorMessage);
+            }
+
             this.service = service;
         }
 

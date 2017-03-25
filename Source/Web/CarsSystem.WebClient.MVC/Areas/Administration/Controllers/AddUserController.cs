@@ -21,6 +21,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         public AddUserController(ICarsService service)
         {
+            if (service == null)
+            {
+                throw new NullReferenceException(ApplicationConstants.CarssServiceErrorMessage);
+            }
+
             this.service = service;
         }
 
@@ -82,7 +87,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             };
 
             IdentityResult result = UserManager.Create(userToAdd, "123456");
-            
+
             var carToAdd = new Car()
             {
                 Manufacturer = receivedModel.Car.Manufacturer,
