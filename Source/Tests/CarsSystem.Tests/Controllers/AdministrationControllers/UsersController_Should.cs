@@ -3,6 +3,7 @@ using NUnit.Framework;
 using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Controllers;
 using Moq;
+using TestStack.FluentMVCTesting;
 
 namespace CarsSystem.Tests.Controllers.AdministrationControllers
 {
@@ -57,6 +58,21 @@ namespace CarsSystem.Tests.Controllers.AdministrationControllers
 
             // Assert
             Assert.IsTrue(expectedMessage.Message.Contains("null"));
+        }
+
+        [Test]
+        public void ReturnViewWithExpectedModel_OnIndexAction()
+        {
+            // Arrange
+            var usersService = new Mock<IUsersService>();
+            var carsService = new Mock<ICarsService>();
+
+            var carsController = new UsersController(usersService.Object, carsService.Object);
+
+            // Act & Arrange
+            carsController
+                           .WithCallTo(c => c.Index())
+                           .ShouldRenderDefaultView();
         }
     }
 }
