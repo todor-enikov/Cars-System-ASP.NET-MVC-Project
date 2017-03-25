@@ -23,7 +23,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var carModel = this.service.GetAllCars().ToList();
+            var carModel = this.service
+                               .GetAllCars()
+                               .ToList();
             var viewModel = new List<ShowAllCarsViewModel>();
 
             foreach (var car in carModel)
@@ -45,7 +47,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Details(Guid id)
         {
-            var carModelById = this.service.GetCarById(id);
+            var carModelById = this.service
+                                   .GetCarById(id);
             var viewModel = new CarDetailsViewModel()
             {
                 Id = carModelById.Id,
@@ -76,7 +79,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 return RedirectToAction("InternalServer", "Error", new { area = "Error" });
             }
 
-            var carModel = this.service.GetCarByVinNumber(vinNumber).ToList();
+            var carModel = this.service
+                               .GetCarByVinNumber(vinNumber)
+                               .ToList();
             var viewModel = new List<ShowAllCarsViewModel>();
 
             foreach (var car in carModel)
@@ -98,7 +103,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Edit(Guid id)
         {
-            var carModelById = this.service.GetCarById(id);
+            var carModelById = this.service
+                                   .GetCarById(id);
             var viewModel = new CarViewModel()
             {
                 Id = carModelById.Id,
@@ -123,7 +129,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpPost]
         public ActionResult Edit(CarViewModel car, Guid id)
         {
-            var carToUpdate = this.service.GetCarById(id);
+            var carToUpdate = this.service
+                                  .GetCarById(id);
             carToUpdate.Id = car.Id;
             carToUpdate.Manufacturer = car.Manufacturer;
             carToUpdate.Model = car.Model;

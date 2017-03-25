@@ -28,7 +28,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var userModel = this.usersService.GetAllUsers().ToList();
+            var userModel = this.usersService
+                                .GetAllUsers()
+                                .ToList();
             var viewModel = new List<ShowAllUsersViewModel>();
 
             foreach (var user in userModel)
@@ -50,7 +52,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Details(string id)
         {
-            var userModelById = this.usersService.GetUserById(id);
+            var userModelById = this.usersService
+                                    .GetUserById(id);
             var caridd = userModelById.Cars.FirstOrDefault().Id;
 
             var viewModel = new UserDetailsViewModel()
@@ -83,7 +86,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 return RedirectToAction("InternalServer", "Error", new { area = "Error" });
             }
 
-            var userModel = this.usersService.GetUserByEGN(long.Parse(search)).ToList();
+            var userModel = this.usersService
+                                .GetUserByEGN(long.Parse(search))
+                                .ToList();
             var viewModel = new List<ShowAllUsersViewModel>();
 
             foreach (var user in userModel)
@@ -105,7 +110,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Edit(string id)
         {
-            var userModelById = this.usersService.GetUserById(id);
+            var userModelById = this.usersService
+                                    .GetUserById(id);
             var viewModel = new UserViewModel()
             {
                 Id = userModelById.Id,
@@ -127,7 +133,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpPost]
         public ActionResult Edit(UserViewModel user, string id)
         {
-            var userToUpdate = this.usersService.GetUserById(id);
+            var userToUpdate = this.usersService
+                                   .GetUserById(id);
             userToUpdate.UserName = user.Username;
             userToUpdate.FirstName = user.FirstName;
             userToUpdate.SecondName = user.SecondName;
