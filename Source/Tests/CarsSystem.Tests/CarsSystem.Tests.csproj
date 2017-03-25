@@ -55,6 +55,11 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -65,6 +70,35 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TestStack.FluentMVCTesting, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TestStack.FluentMVCTesting.3.0.0\lib\NET45\TestStack.FluentMVCTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -81,6 +115,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\AccountControllerTests\Login_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\NotFound_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\Forbidden_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\InternalServer_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\UnAuthorized_Should.cs" />
+    <Compile Include="Controllers\ErrorControllerTests\BadRequest_Should.cs" />
+    <Compile Include="Controllers\HomeControllerTests\Index_Should.cs" />
+    <Compile Include="Controllers\HomeControllerTests\About_Should.cs" />
+    <Compile Include="Controllers\HomeControllerTests\Contact_Should.cs" />
+    <Compile Include="Controllers\ManageControllerTests\ChangePassword_Should.cs" />
     <Compile Include="Data\CarsSystem.Data.Models\CarTests\CarAttributesTests.cs" />
     <Compile Include="Data\CarsSystem.Data.Models\CarTests\Should.cs" />
     <Compile Include="Data\CarsSystem.Data.Models\UserTests\UserAttributesTests.cs" />
@@ -129,6 +173,10 @@
     <ProjectReference Include="..\..\Services\CarsSystem.Services\CarsSystem.Services.csproj">
       <Project>{ef373982-2cde-4897-bfb5-932595eefa12}</Project>
       <Name>CarsSystem.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\CarsSystem.WebClient.MVC\CarsSystem.WebClient.MVC.csproj">
+      <Project>{6A3EA9D6-4A1A-446A-8BAE-40EA0A2DF4C4}</Project>
+      <Name>CarsSystem.WebClient.MVC</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
