@@ -59,5 +59,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime ValidUntilInsurance { get; set; }
+
+        public string CarOwnerId { get; set; }
     }
 }

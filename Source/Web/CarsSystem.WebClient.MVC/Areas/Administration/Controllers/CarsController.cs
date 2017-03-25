@@ -113,31 +113,30 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 YearOfManufactoring = carModelById.YearOfManufacturing,
                 ValidUntilAnnualCheckUp = carModelById.ValidUntilAnnualCheckUp,
                 ValidUntilVignette = carModelById.ValidUntilVignette,
-                ValidUntilInsurance = carModelById.ValidUntilVignette
+                ValidUntilInsurance = carModelById.ValidUntilVignette,
+                CarOwnerId = carModelById.UserId
             };
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Edit(CarViewModel car)
+        public ActionResult Edit(CarViewModel car, Guid id)
         {
-            var carToUpdate = new Car()
-            {
-                Id = car.Id,
-                Manufacturer = car.Manufacturer,
-                Model = car.Model,
-                TypeOfEngine = car.TypeOfEngine,
-                RegistrationNumber = car.RegistrationNumber,
-                VINNumber = car.VINNumber,
-                CountOfTyres = car.CountOfTyres,
-                CountOfDoors = car.CountOfDoors,
-                TypeOfCar = car.TypeOfCar,
-                YearOfManufacturing = car.YearOfManufactoring,
-                ValidUntilAnnualCheckUp = car.ValidUntilAnnualCheckUp,
-                ValidUntilInsurance = car.ValidUntilInsurance,
-                ValidUntilVignette = car.ValidUntilVignette
-            };
+            var carToUpdate = this.service.GetCarById(id);
+            carToUpdate.Id = car.Id;
+            carToUpdate.Manufacturer = car.Manufacturer;
+            carToUpdate.Model = car.Model;
+            carToUpdate.TypeOfEngine = car.TypeOfEngine;
+            carToUpdate.RegistrationNumber = car.RegistrationNumber;
+            carToUpdate.VINNumber = car.VINNumber;
+            carToUpdate.CountOfTyres = car.CountOfTyres;
+            carToUpdate.CountOfDoors = car.CountOfDoors;
+            carToUpdate.TypeOfCar = car.TypeOfCar;
+            carToUpdate.YearOfManufacturing = car.YearOfManufactoring;
+            carToUpdate.ValidUntilAnnualCheckUp = car.ValidUntilAnnualCheckUp;
+            carToUpdate.ValidUntilInsurance = car.ValidUntilInsurance;
+            carToUpdate.ValidUntilVignette = car.ValidUntilVignette;
 
             this.service.Update(carToUpdate);
 
