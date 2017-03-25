@@ -116,6 +116,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\AccountControllerTests\Login_Should.cs" />
+    <Compile Include="Controllers\AdministrationControllers\AddUserController_Should.cs" />
+    <Compile Include="Controllers\AdministrationControllers\CarsController_Should.cs" />
+    <Compile Include="Controllers\AdministrationControllers\FilterController_Should.cs" />
+    <Compile Include="Controllers\AdministrationControllers\UsersController_Should.cs" />
     <Compile Include="Controllers\ErrorControllerTests\NotFound_Should.cs" />
     <Compile Include="Controllers\ErrorControllerTests\Forbidden_Should.cs" />
     <Compile Include="Controllers\ErrorControllerTests\InternalServer_Should.cs" />
