@@ -16,37 +16,19 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
     [Authorize(Roles = ApplicationConstants.AdminRole)]
     public class UsersController : Controller
     {
-        private readonly IUsersService userService;
+        private readonly IUsersService usersService;
         private readonly ICarsService carsService;
-        private UserManager _userManager;
 
-        public UsersController(IUsersService userService, ICarsService carsService)
+        public UsersController(IUsersService usersService, ICarsService carsService)
         {
-            this.userService = userService;
+            this.usersService = usersService;
             this.carsService = carsService;
-        }
-
-        public UsersController(UserManager userManager)
-        {
-            UserManager = userManager;
-        }
-
-        public UserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<UserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var userModel = this.userService.GetAllUsers().ToList();
+            var userModel = this.usersService.GetAllUsers().ToList();
             var viewModel = new List<ShowAllUsersViewModel>();
 
             foreach (var user in userModel)
@@ -68,7 +50,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Details(string id)
         {
-            var userModelById = this.userService.GetUserById(id);
+            var userModelById = this.usersService.GetUserById(id);
             var caridd = userModelById.Cars.FirstOrDefault().Id;
 
             var viewModel = new UserDetailsViewModel()
@@ -101,7 +83,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 return RedirectToAction("InternalServer", "Error", new { area = "Error" });
             }
 
-            var userModel = this.userService.GetUserByEGN(long.Parse(search)).ToList();
+            var userModel = this.usersService.GetUserByEGN(long.Parse(search)).ToList();
             var viewModel = new List<ShowAllUsersViewModel>();
 
             foreach (var user in userModel)
@@ -123,7 +105,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Edit(string id)
         {
-            var userModelById = this.userService.GetUserById(id);
+            var userModelById = this.usersService.GetUserById(id);
             var viewModel = new UserViewModel()
             {
                 Id = userModelById.Id,
@@ -143,25 +125,21 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(UserViewModel user)
+        public ActionResult Edit(UserViewModel user, string id)
         {
-            var userToUpdate = new User()
-            {
-                Id = user.Id,
-                UserName = user.Username,
-                FirstName = user.FirstName,
-                SecondName = user.SecondName,
-                LastName = user.LastName,
-                EGN = user.Egn,
-                NumberOfIdCard = user.NumberOfIdCard,
-                DateOfIssue = user.DateOfIssue,
-                City = user.City,
-                PhoneNumber = user.PhoneNumber,
-                Email = user.Email,
-            };
+            var userToUpdate = this.usersService.GetUserById(id);
+            userToUpdate.UserName = user.Username;
+            userToUpdate.FirstName = user.FirstName;
+            userToUpdate.SecondName = user.SecondName;
+            userToUpdate.LastName = user.LastName;
+            userToUpdate.EGN = user.Egn;
+            userToUpdate.NumberOfIdCard = user.NumberOfIdCard;
+            userToUpdate.DateOfIssue = user.DateOfIssue;
+            userToUpdate.City = user.City;
+            userToUpdate.PhoneNumber = user.PhoneNumber;
+            userToUpdate.Email = user.Email;
 
-            this.userService.Update(userToUpdate);
-            UserManager.AddPassword(userToUpdate.Id, "123456");
+            this.usersService.Update(userToUpdate);
 
             return RedirectToAction("Details", "Users", new { area = "Administration", id = user.Id });
         }
