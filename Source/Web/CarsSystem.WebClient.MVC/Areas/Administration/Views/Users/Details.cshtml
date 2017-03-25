@@ -1,109 +1,109 @@
 ﻿@model CarsSystem.WebClient.MVC.Areas.Administration.Models.Users.UserDetailsViewModel
 
-    @{
-        ViewBag.Title = "All cars";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    <br />
-    <div class="row">
-        <h1 class="text-center">User details page!</h1>
-        <div class="well col-md-6 col-md-offset-3">
-            <br />
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Username: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.Username)
-                </div>
+@{
+    ViewBag.Title = "All cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    <h1 class="text-center">User details page!</h1>
+    <div class="well col-md-6 col-md-offset-3">
+        <br />
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Username: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("First name: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.FirstName)
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.Username)
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Second name: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.SecondName)
-                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("First name: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Last name: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.LastName)
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.FirstName)
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("EGN: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.Egn.ToString())
-                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Second name: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Number of id card: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.NumberOfIdCard.ToString())
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.SecondName)
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Date of issue: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.DateOfIssue.ToString("dd/MM/yyyy"))
-                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Last name: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("City: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.City)
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.LastName)
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Phone number: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.PhoneNumber)
-                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("EGN: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("E-mail: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.Label(Model.Email)
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.Egn.ToString())
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Edit user's details: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.ActionLink("Edit", "Edit", "Users", new { id = Model.Id }, null)
-                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Number of id card: ")
             </div>
-            <div class="row form-group">
-                <div class="col-md-6 text-right">
-                    @Html.Label("Check owner's car: ")
-                </div>
-                <div class="col-md-6">
-                    @Html.ActionLink("Go to details", "Details", "Cars", new { id = Model.CarId }, null)
-                </div>
+            <div class="col-md-6">
+                @Html.Label(Model.NumberOfIdCard.ToString())
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Date of issue: ")
+            </div>
+            <div class="col-md-6">
+                @Html.Label(Model.DateOfIssue.ToString("dd/MM/yyyy"))
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("City: ")
+            </div>
+            <div class="col-md-6">
+                @Html.Label(Model.City)
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Phone number: ")
+            </div>
+            <div class="col-md-6">
+                @Html.Label(Model.PhoneNumber)
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("E-mail: ")
+            </div>
+            <div class="col-md-6">
+                <strong>@Html.Encode(Model.Email)</strong>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Edit user's details: ")
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Edit", "Edit", "Users", new { id = Model.Id }, null)
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 text-right">
+                @Html.Label("Check owner's car: ")
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Go to details", "Details", "Cars", new { id = Model.CarId }, null)
             </div>
         </div>
     </div>
+</div>

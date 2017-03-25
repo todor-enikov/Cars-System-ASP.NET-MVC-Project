@@ -37,7 +37,7 @@
                         </dd>
                         <dt>Email:</dt>
                         <dd>
-                            @Html.Label(Model.Email)
+                            <strong>@Html.Encode(Model.Email)</strong>
                         </dd>
                         @if (System.Web.HttpContext.Current.User.IsInRole("User"))
                         {
