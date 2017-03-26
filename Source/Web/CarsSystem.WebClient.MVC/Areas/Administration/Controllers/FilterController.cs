@@ -71,7 +71,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
-            return RedirectToAction("Index", "Home", new { area = "" });
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
         [HttpGet]
@@ -108,7 +108,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
-            return RedirectToAction("Index", "Home", new { area = "" });
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
         [HttpGet]
@@ -145,7 +145,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
-            return RedirectToAction("Index", "Home", new { area = "" });
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
     }
 }

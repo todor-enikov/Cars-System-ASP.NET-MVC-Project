@@ -111,8 +111,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             {
                 UserManager.AddToRole(userToAdd.Id, ApplicationConstants.UserRole);
                 this.service.AddCar(carToAdd);
-                return RedirectToAction("Index", "Home", new { area = "" });
+                return RedirectToAction("Index", "Success", new { area = "Administration" });
             }
+
             return View(receivedModel);
         }
     }
