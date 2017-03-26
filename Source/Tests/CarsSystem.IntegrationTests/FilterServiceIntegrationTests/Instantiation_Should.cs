@@ -1,10 +1,10 @@
-﻿using System;
-using NUnit.Framework;
-using CarsSystem.Data.Repositories;
+﻿using CarsSystem.Data;
 using CarsSystem.Data.Models;
+using CarsSystem.Data.Repositories;
 using CarsSystem.Services;
-using CarsSystem.Data;
 using CarsSystem.Services.Contracts;
+using NUnit.Framework;
+using System;
 
 namespace CarsSystem.IntegrationTests.FilterServiceTests
 {

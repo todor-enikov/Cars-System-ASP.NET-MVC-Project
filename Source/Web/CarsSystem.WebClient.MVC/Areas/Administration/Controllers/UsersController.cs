@@ -1,15 +1,10 @@
-﻿using CarsSystem.Auth;
-using CarsSystem.Data.Models;
-using CarsSystem.Services.Contracts;
+﻿using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models.Users;
 using Common;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers

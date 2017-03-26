@@ -1,7 +1,6 @@
 ﻿using CarsSystem.Services;
 using CarsSystem.Services.Contracts;
 using NUnit.Framework;
-using System;
 
 namespace CarsSystem.IntegrationTests.MailServiceTests
 {
