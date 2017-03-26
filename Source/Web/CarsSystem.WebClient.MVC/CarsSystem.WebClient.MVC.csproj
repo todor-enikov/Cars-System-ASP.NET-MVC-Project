@@ -74,8 +74,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -191,6 +191,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AddUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\CarsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\SuccessController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\FilterController.cs" />
     <Compile Include="Areas\Administration\Models\AddUserViewModel.cs" />
@@ -295,6 +296,7 @@
     <Content Include="Areas\Administration\Views\Shared\_FilterGrid.cshtml" />
     <Content Include="Areas\Administration\Views\Cars\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Success\Index.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -382,7 +384,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>30596</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:27742/</IISUrl>
+          <IISUrl>http://localhost:1234/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
