@@ -69,6 +69,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         // POST: Administration/AddUser
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddUser(AddUserViewModel receivedModel)
         {
 

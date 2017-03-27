@@ -82,6 +82,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Search(string search)
         {
             long result;
@@ -137,6 +138,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(UserViewModel user, string id)
         {
             var userToUpdate = this.usersService

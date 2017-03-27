@@ -63,6 +63,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult FilterByAnnualCheckUp(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
@@ -100,6 +101,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult FilterByVignette(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
@@ -137,6 +139,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult FilterByInsurance(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService

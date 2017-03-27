@@ -13,6 +13,7 @@
         InsertionMode = InsertionMode.Replace
     }))
     {
+        @Html.AntiForgeryToken()
         <div class="col-md-2 text-center">
             @Html.Label("Enter EGN: ", null, new { @class = "form-control" })
         </div>

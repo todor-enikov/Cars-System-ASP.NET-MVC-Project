@@ -11,6 +11,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(string submit)
         {
             return RedirectToAction("Index", "Home", new { area = "" });

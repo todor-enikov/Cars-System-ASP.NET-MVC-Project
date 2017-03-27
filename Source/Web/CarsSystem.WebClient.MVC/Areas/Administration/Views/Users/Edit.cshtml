@@ -12,6 +12,7 @@
         <br />
         @using (Html.BeginForm("Edit", "Users", FormMethod.Post))
         {
+            @Html.AntiForgeryToken()
             <div class="row form-group">
                 <div class="col-md-6 text-right">
                     @Html.Label("Username: ")

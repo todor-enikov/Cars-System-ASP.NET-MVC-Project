@@ -75,6 +75,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Search(string vinNumber)
         {
 
@@ -131,6 +132,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(CarViewModel car, Guid id)
         {
             var carToUpdate = this.service
