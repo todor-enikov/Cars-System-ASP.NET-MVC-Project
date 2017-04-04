@@ -102,6 +102,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 viewModel.Add(currentUser);
             }
 
+            if (viewModel.Count < 1)
+            {
+                return PartialView("_NoResults", viewModel);
+            }
+
             return PartialView("_AllCars", viewModel);
         }
 
