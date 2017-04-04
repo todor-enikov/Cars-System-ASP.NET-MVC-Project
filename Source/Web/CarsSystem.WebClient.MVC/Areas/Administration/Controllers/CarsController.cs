@@ -102,7 +102,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 viewModel.Add(currentUser);
             }
 
-            return View("Index", viewModel);
+            return PartialView("_AllCars", viewModel);
         }
 
         [HttpGet]
