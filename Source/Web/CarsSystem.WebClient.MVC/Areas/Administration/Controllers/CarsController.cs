@@ -67,7 +67,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 YearOfManufactoring = carModelById.YearOfManufacturing,
                 ValidUntilAnnualCheckUp = carModelById.ValidUntilAnnualCheckUp,
                 ValidUntilVignette = carModelById.ValidUntilVignette,
-                ValidUntilInsurance = carModelById.ValidUntilVignette,
+                ValidUntilInsurance = carModelById.ValidUntilInsurance,
                 CarOwnerId = carModelById.UserId
             };
 
@@ -124,7 +124,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 YearOfManufactoring = carModelById.YearOfManufacturing,
                 ValidUntilAnnualCheckUp = carModelById.ValidUntilAnnualCheckUp,
                 ValidUntilVignette = carModelById.ValidUntilVignette,
-                ValidUntilInsurance = carModelById.ValidUntilVignette,
+                ValidUntilInsurance = carModelById.ValidUntilInsurance,
                 CarOwnerId = carModelById.UserId
             };
 
