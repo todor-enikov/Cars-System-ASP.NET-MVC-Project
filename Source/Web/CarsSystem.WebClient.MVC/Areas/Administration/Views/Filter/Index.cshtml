@@ -8,12 +8,21 @@
     <div class="well col-md-10 col-md-offset-1">
         <h1 class="text-center">Choose filter!</h1>
         <br />
+        <h2 class="text-center">Taxes witch are expiring today!</h2>
+        <br />
+        <ul class="filterList col-md-offset-2">
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Annual Check Up", "FilterExpiringByAnnualCheckUpToday")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Vignette", "FilterExpiringByVignetteToday")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Insurance", "FilterExpiringByInsuranceToday")</li>
+        </ul>
+        <br />
+        <br />
         <h2 class="text-center">Taxes witch are expiring in the next seven days!</h2>
         <br />
         <ul class="filterList col-md-offset-2">
-            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Annual Check Up", "FilterByAnnualCheckUpInTheNextSevenDays")</li>
-            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Vignette", "FilterByVignetteInTheNextSevenDays")</li>
-            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Insurance", "FilterByInsuranceInTheNextSevenDays")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Annual Check Up", "FilterExpiringByAnnualCheckUpInTheNextSevenDays")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Vignette", "FilterExpiringByVignetteInTheNextSevenDays")</li>
+            <li class="listitems col-md-4 text-center">@Html.ActionLink("Filter By Insurance", "FilterExpiringByInsuranceInTheNextSevenDays")</li>
         </ul>
         <br />
     </div>

@@ -28,11 +28,25 @@ namespace CarsSystem.Services
                                .Where(c => (c.ValidUntilVignette - dateTimeNow).TotalDays <= 7);
         }
 
+        public IEnumerable<Car> FilterExpiringVignetteCarsToday()
+        {
+            var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
+            return this.carRepo.All()
+                               .Where(c => (c.ValidUntilVignette - dateTimeNow).TotalDays == 0);
+        }
+
         public IEnumerable<Car> FilterExpiringInsuranceInTheNextSevenDays()
         {
             var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
             return this.carRepo.All()
                                .Where(c => (c.ValidUntilInsurance - dateTimeNow).TotalDays <= 7);
+        }
+
+        public IEnumerable<Car> FilterExpiringInsuranceToday()
+        {
+            var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
+            return this.carRepo.All()
+                               .Where(c => (c.ValidUntilInsurance - dateTimeNow).TotalDays == 0);
         }
 
         public IEnumerable<Car> FilterExpiringAnnualCheckUpInTheNextSevenDays()
@@ -42,10 +56,23 @@ namespace CarsSystem.Services
                        .Where(c => (c.ValidUntilAnnualCheckUp - dateTimeNow).TotalDays <= 7);
         }
 
+        public IEnumerable<Car> FilterExpiringAnnualCheckUpToday()
+        {
+            var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
+            return this.carRepo.All()
+                       .Where(c => (c.ValidUntilAnnualCheckUp - dateTimeNow).TotalDays == 0);
+        }
+
         public IEnumerable<string> GetMailsForCarsVignetteExpirationInTheNextSevenDays()
         {
             return this.FilterExpiringVignetteCarsInTheNextSevenDays()
                        .Select(c => c.User.Email);
+        }
+
+        public IEnumerable<string> GetMailsForCarsVignetteExpirationToday()
+        {
+            return this.FilterExpiringVignetteCarsToday()
+                .Select(c => c.User.Email);
         }
 
         public IEnumerable<string> GetMailsForCarsInsuranceExpirationInTheNextSevenDays()
@@ -54,9 +81,21 @@ namespace CarsSystem.Services
                        .Select(c => c.User.Email);
         }
 
+        public IEnumerable<string> GetMailsForCarsInsuranceExpirationToday()
+        {
+            return this.FilterExpiringInsuranceToday()
+                       .Select(c => c.User.Email);
+        }
+
         public IEnumerable<string> GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays()
         {
             return this.FilterExpiringAnnualCheckUpInTheNextSevenDays()
+                       .Select(c => c.User.Email);
+        }
+
+        public IEnumerable<string> GetMailsForCarsAnnualCheckUpToday()
+        {
+            return this.FilterExpiringAnnualCheckUpToday()
                        .Select(c => c.User.Email);
         }
     }

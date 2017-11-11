@@ -38,7 +38,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterByAnnualCheckUpInTheNextSevenDays()
+        public ActionResult FilterExpiringByAnnualCheckUpInTheNextSevenDays()
         {
             var filterModel = this.filterService
                                   .FilterExpiringAnnualCheckUpInTheNextSevenDays()
@@ -64,7 +64,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByAnnualCheckUpInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterExpiringByAnnualCheckUpInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
                              .GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays()
@@ -76,7 +76,45 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterByVignetteInTheNextSevenDays()
+        public ActionResult FilterExpiringByAnnualCheckUpToday()
+        {
+            var filterModel = this.filterService
+                                  .FilterExpiringAnnualCheckUpToday()
+                                  .ToList();
+            var viewModel = new List<FilterViewModel>();
+
+            foreach (var filter in filterModel)
+            {
+                var currentFilter = new FilterViewModel()
+                {
+                    Manufacturer = filter.Manufacturer,
+                    Model = filter.Model,
+                    RegistrationNumber = filter.RegistrationNumber,
+                    VINNumber = filter.VINNumber,
+                    ExpirationDate = filter.ValidUntilAnnualCheckUp
+                };
+
+                viewModel.Add(currentFilter);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FilterExpiringByAnnualCheckUpToday(string emailSubjectTextBox, string emailContentBox)
+        {
+            var emails = this.filterService
+                             .GetMailsForCarsAnnualCheckUpToday()
+                             .ToList();
+
+            this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
+
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
+        }
+
+        [HttpGet]
+        public ActionResult FilterExpiringByVignetteInTheNextSevenDays()
         {
             var filterModel = this.filterService
                                   .FilterExpiringVignetteCarsInTheNextSevenDays()
@@ -102,7 +140,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByVignetteInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterExpiringByVignetteInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
                              .GetMailsForCarsVignetteExpirationInTheNextSevenDays()
@@ -114,7 +152,45 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterByInsuranceInTheNextSevenDays()
+        public ActionResult FilterExpiringByVignetteToday()
+        {
+            var filterModel = this.filterService
+                                  .FilterExpiringVignetteCarsToday()
+                                  .ToList();
+            var viewModel = new List<FilterViewModel>();
+
+            foreach (var filter in filterModel)
+            {
+                var currentFilter = new FilterViewModel()
+                {
+                    Manufacturer = filter.Manufacturer,
+                    Model = filter.Model,
+                    RegistrationNumber = filter.RegistrationNumber,
+                    VINNumber = filter.VINNumber,
+                    ExpirationDate = filter.ValidUntilAnnualCheckUp
+                };
+
+                viewModel.Add(currentFilter);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FilterExpiringByVignetteToday(string emailSubjectTextBox, string emailContentBox)
+        {
+            var emails = this.filterService
+                             .GetMailsForCarsVignetteExpirationToday()
+                             .ToList();
+
+            this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
+
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
+        }
+
+        [HttpGet]
+        public ActionResult FilterExpiringByInsuranceInTheNextSevenDays()
         {
             var filterModel = this.filterService
                                   .FilterExpiringInsuranceInTheNextSevenDays()
@@ -140,10 +216,48 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByInsuranceInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterExpiringByInsuranceInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
                              .GetMailsForCarsInsuranceExpirationInTheNextSevenDays()
+                             .ToList();
+
+            this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
+
+            return RedirectToAction("Index", "Success", new { area = "Administration" });
+        }
+
+        [HttpGet]
+        public ActionResult FilterExpiringByInsuranceToday()
+        {
+            var filterModel = this.filterService
+                                  .FilterExpiringInsuranceToday()
+                                  .ToList();
+            var viewModel = new List<FilterViewModel>();
+
+            foreach (var filter in filterModel)
+            {
+                var currentFilter = new FilterViewModel()
+                {
+                    Manufacturer = filter.Manufacturer,
+                    Model = filter.Model,
+                    RegistrationNumber = filter.RegistrationNumber,
+                    VINNumber = filter.VINNumber,
+                    ExpirationDate = filter.ValidUntilAnnualCheckUp
+                };
+
+                viewModel.Add(currentFilter);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FilterExpiringByInsuranceToday(string emailSubjectTextBox, string emailContentBox)
+        {
+            var emails = this.filterService
+                             .GetMailsForCarsInsuranceExpirationToday()
                              .ToList();
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);

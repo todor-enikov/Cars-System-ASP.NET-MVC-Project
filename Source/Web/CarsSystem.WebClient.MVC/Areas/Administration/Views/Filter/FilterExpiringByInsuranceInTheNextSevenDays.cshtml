@@ -1,12 +1,12 @@
 ﻿@model  List<CarsSystem.WebClient.MVC.Areas.Administration.Models.Filter.FilterViewModel>
 
 @{
-    ViewBag.Title = "Filter by vignette";
+    ViewBag.Title = "Filter by insurance expiring in the next seven days";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <br />
-<h1 class="text-center">All cars which vignette expires in the next seven days!</h1>
+<h1 class="text-center">All cars which insurance expires in the next seven days!</h1>
 <br />
 <div class="row">
     <div class="col-md-12">
@@ -16,7 +16,7 @@
 <br />
 <div class="row">
     <div class="col-md-12 col-md-offset-2">
-        @using (Html.BeginForm("FilterByVignetteInTheNextSevenDays", null))
+        @using (Html.BeginForm("FilterExpiringByInsuranceInTheNextSevenDays", null))
         {
             @Html.Partial("_SendingEmailForm")
         }

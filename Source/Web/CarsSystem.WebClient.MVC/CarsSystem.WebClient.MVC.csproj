@@ -280,9 +280,9 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\AddUser\AddUser.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByAnnualCheckUpInTheNextSevenDays.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByVignetteInTheNextSevenDays.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByInsuranceInTheNextSevenDays.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByAnnualCheckUpInTheNextSevenDays.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByVignetteInTheNextSevenDays.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByInsuranceInTheNextSevenDays.cshtml" />
     <Content Include="Areas\Administration\Views\Cars\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="SampleTemplate.cshtml">
@@ -298,6 +298,9 @@
     <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Success\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_SendingEmailForm.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByVignetteToday.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByAnnualCheckUpToday.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterExpiringByInsuranceToday.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
