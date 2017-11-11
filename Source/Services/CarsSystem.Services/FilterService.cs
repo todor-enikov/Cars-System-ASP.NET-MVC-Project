@@ -21,42 +21,42 @@ namespace CarsSystem.Services
             this.carRepo = carRepo;
         }
 
-        public IEnumerable<Car> FilterExpiringVignetteCars()
+        public IEnumerable<Car> FilterExpiringVignetteCarsInTheNextSevenDays()
         {
             var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
             return this.carRepo.All()
                                .Where(c => (c.ValidUntilVignette - dateTimeNow).TotalDays <= 7);
         }
 
-        public IEnumerable<Car> FilterExpiringInsurance()
+        public IEnumerable<Car> FilterExpiringInsuranceInTheNextSevenDays()
         {
             var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
             return this.carRepo.All()
                                .Where(c => (c.ValidUntilInsurance - dateTimeNow).TotalDays <= 7);
         }
 
-        public IEnumerable<Car> FilterExpiringAnnualCheckUp()
+        public IEnumerable<Car> FilterExpiringAnnualCheckUpInTheNextSevenDays()
         {
             var dateTimeNow = DateTime.Parse(DateTime.Now.ToString("yyyy.MM.dd"));
             return this.carRepo.All()
                        .Where(c => (c.ValidUntilAnnualCheckUp - dateTimeNow).TotalDays <= 7);
         }
 
-        public IEnumerable<string> GetMailsForCarsVignetteExpiration()
+        public IEnumerable<string> GetMailsForCarsVignetteExpirationInTheNextSevenDays()
         {
-            return this.FilterExpiringVignetteCars()
+            return this.FilterExpiringVignetteCarsInTheNextSevenDays()
                        .Select(c => c.User.Email);
         }
 
-        public IEnumerable<string> GetMailsForCarsInsuranceExpiration()
+        public IEnumerable<string> GetMailsForCarsInsuranceExpirationInTheNextSevenDays()
         {
-            return this.FilterExpiringInsurance()
+            return this.FilterExpiringInsuranceInTheNextSevenDays()
                        .Select(c => c.User.Email);
         }
 
-        public IEnumerable<string> GetMailsForCarsAnnualCheckUpExpiration()
+        public IEnumerable<string> GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays()
         {
-            return this.FilterExpiringAnnualCheckUp()
+            return this.FilterExpiringAnnualCheckUpInTheNextSevenDays()
                        .Select(c => c.User.Email);
         }
     }

@@ -5,16 +5,16 @@ namespace CarsSystem.Services.Contracts
 {
     public interface IFilterService
     {
-        IEnumerable<Car> FilterExpiringVignetteCars();
+        IEnumerable<Car> FilterExpiringVignetteCarsInTheNextSevenDays();
 
-        IEnumerable<Car> FilterExpiringInsurance();
+        IEnumerable<Car> FilterExpiringInsuranceInTheNextSevenDays();
 
-        IEnumerable<Car> FilterExpiringAnnualCheckUp();
+        IEnumerable<Car> FilterExpiringAnnualCheckUpInTheNextSevenDays();
 
-        IEnumerable<string> GetMailsForCarsVignetteExpiration();
+        IEnumerable<string> GetMailsForCarsVignetteExpirationInTheNextSevenDays();
 
-        IEnumerable<string> GetMailsForCarsInsuranceExpiration();
+        IEnumerable<string> GetMailsForCarsInsuranceExpirationInTheNextSevenDays();
 
-        IEnumerable<string> GetMailsForCarsAnnualCheckUpExpiration();
+        IEnumerable<string> GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays();
     }
 }

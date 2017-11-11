@@ -27,7 +27,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             var service = new FilterService(mockedRepo.Object);
 
             // Act
-            var result = service.FilterExpiringInsurance().ToList();
+            var result = service.FilterExpiringInsuranceInTheNextSevenDays().ToList();
 
             // Assert
             Assert.AreEqual(collectionOfCars.Count, result.Count);
@@ -48,7 +48,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             var service = new FilterService(mockedRepo.Object);
 
             // Act
-            service.FilterExpiringInsurance();
+            service.FilterExpiringInsuranceInTheNextSevenDays();
 
             // Assert
             mockedRepo.Verify(m => m.All(), Times.Exactly(1));

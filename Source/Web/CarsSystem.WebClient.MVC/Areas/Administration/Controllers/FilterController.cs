@@ -31,17 +31,17 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        [OutputCache(Duration = 60 * 60)]
+        //[OutputCache(Duration = 60 * 60)]
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpGet]
-        public ActionResult FilterByAnnualCheckUp()
+        public ActionResult FilterByAnnualCheckUpInTheNextSevenDays()
         {
             var filterModel = this.filterService
-                                  .FilterExpiringAnnualCheckUp()
+                                  .FilterExpiringAnnualCheckUpInTheNextSevenDays()
                                   .ToList();
             var viewModel = new List<FilterViewModel>();
 
@@ -64,10 +64,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByAnnualCheckUp(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterByAnnualCheckUpInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
-                             .GetMailsForCarsAnnualCheckUpExpiration()
+                             .GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays()
                              .ToList();
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
@@ -76,10 +76,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterByVignette()
+        public ActionResult FilterByVignetteInTheNextSevenDays()
         {
             var filterModel = this.filterService
-                                  .FilterExpiringVignetteCars()
+                                  .FilterExpiringVignetteCarsInTheNextSevenDays()
                                   .ToList();
             var viewModel = new List<FilterViewModel>();
 
@@ -102,10 +102,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByVignette(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterByVignetteInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
-                             .GetMailsForCarsVignetteExpiration()
+                             .GetMailsForCarsVignetteExpirationInTheNextSevenDays()
                              .ToList();
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
@@ -114,10 +114,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterByInsurance()
+        public ActionResult FilterByInsuranceInTheNextSevenDays()
         {
             var filterModel = this.filterService
-                                  .FilterExpiringInsurance()
+                                  .FilterExpiringInsuranceInTheNextSevenDays()
                                   .ToList();
             var viewModel = new List<FilterViewModel>();
 
@@ -140,10 +140,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FilterByInsurance(string emailSubjectTextBox, string emailContentBox)
+        public ActionResult FilterByInsuranceInTheNextSevenDays(string emailSubjectTextBox, string emailContentBox)
         {
             var emails = this.filterService
-                             .GetMailsForCarsInsuranceExpiration()
+                             .GetMailsForCarsInsuranceExpirationInTheNextSevenDays()
                              .ToList();
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);

@@ -27,7 +27,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             var service = new FilterService(mockedRepo.Object);
 
             // Act
-            service.GetMailsForCarsVignetteExpiration();
+            service.GetMailsForCarsVignetteExpirationInTheNextSevenDays();
 
             // Assert
             mockedRepo.Verify(m => m.All(), Times.Exactly(1));
@@ -49,7 +49,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             var service = new FilterService(mockedRepo.Object);
 
             // Act
-            service.GetMailsForCarsInsuranceExpiration();
+            service.GetMailsForCarsInsuranceExpirationInTheNextSevenDays();
 
             // Assert
             mockedRepo.Verify(m => m.All(), Times.Exactly(1));
@@ -71,7 +71,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.FilterServiceTests
             var service = new FilterService(mockedRepo.Object);
 
             // Act
-            service.GetMailsForCarsAnnualCheckUpExpiration();
+            service.GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays();
 
             // Assert
             mockedRepo.Verify(m => m.All(), Times.Exactly(1));

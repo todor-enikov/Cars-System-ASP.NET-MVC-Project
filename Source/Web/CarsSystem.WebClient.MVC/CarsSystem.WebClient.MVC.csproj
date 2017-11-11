@@ -280,9 +280,9 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\AddUser\AddUser.cshtml" />
     <Content Include="Areas\Administration\Views\Filter\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByAnnualCheckUp.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByVignette.cshtml" />
-    <Content Include="Areas\Administration\Views\Filter\FilterByInsurance.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterByAnnualCheckUpInTheNextSevenDays.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterByVignetteInTheNextSevenDays.cshtml" />
+    <Content Include="Areas\Administration\Views\Filter\FilterByInsuranceInTheNextSevenDays.cshtml" />
     <Content Include="Areas\Administration\Views\Cars\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="SampleTemplate.cshtml">
