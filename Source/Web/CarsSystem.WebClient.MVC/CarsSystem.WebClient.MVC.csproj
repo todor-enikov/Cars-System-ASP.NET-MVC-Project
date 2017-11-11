@@ -351,13 +351,13 @@
       <Project>{f4747700-a6ca-44a7-8876-e47941d6d34f}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data\CarsSystem.Data.Models\CarsSystem.Data.Models.csproj">
-      <Project>{169f5636-2ce7-47e4-88de-9deb109e1cac}</Project>
-      <Name>CarsSystem.Data.Models</Name>
+    <ProjectReference Include="..\..\Data\CarSystem.Data.Models\CarSystem.Data.Models.csproj">
+      <Project>{b5ba247e-47f1-4854-a0b0-6f96b941a287}</Project>
+      <Name>CarSystem.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data\CarsSystem.Data\CarsSystem.Data.csproj">
-      <Project>{a13a0d1f-bb4c-4d2b-844d-361bdc8f981b}</Project>
-      <Name>CarsSystem.Data</Name>
+    <ProjectReference Include="..\..\Data\CarSystem.Data\CarSystem.Data.csproj">
+      <Project>{edc3c553-531a-4153-9a0f-c5202678a8aa}</Project>
+      <Name>CarSystem.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\CarsSystem.Services\CarsSystem.Services.csproj">
       <Project>{ef373982-2cde-4897-bfb5-932595eefa12}</Project>

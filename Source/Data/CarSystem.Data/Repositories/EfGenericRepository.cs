@@ -83,6 +83,6 @@ namespace CarsSystem.Data.Repositories
         public virtual int SaveChanges()
         {
             return this.Context.SaveChanges();
-        }    
+        }
     }
 }
