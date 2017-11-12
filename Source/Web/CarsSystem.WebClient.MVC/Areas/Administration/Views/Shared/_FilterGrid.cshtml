@@ -6,11 +6,13 @@
 
 @grid.GetHtml(
     tableStyle: "table table-striped table-hover form-group",
-    headerStyle: "text-center",
+    headerStyle: "text-right",
     columns: grid.Columns(
+        grid.Column("OwnerOfVehicle", "Owner"),
         grid.Column("Manufacturer", "Manufacturer"),
         grid.Column("Model", "Model"),
         grid.Column("RegistrationNumber", "Registration number"),
         grid.Column("VINNumber", "Registration number"),
-        grid.Column("ExpirationDate", "Valid until", format: (item) => string.Format("{0:dd/MM/yyyy}", item.ExpirationDate))
+        grid.Column("ExpirationDate", "Valid until", format: (item) => string.Format("{0:dd/MM/yyyy}", item.ExpirationDate)),
+        grid.Column("UserNotificationMessage", "Is user notified for expiring with e-mail?")
       ))

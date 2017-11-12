@@ -1,4 +1,5 @@
-﻿using CarsSystem.Services.Contracts;
+﻿using CarsSystem.Data.Models;
+using CarsSystem.Services.Contracts;
 using CarsSystem.WebClient.MVC.Areas.Administration.Models.Filter;
 using Common;
 using System;
@@ -43,21 +44,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringAnnualCheckUpInTheNextSevenDays()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -81,21 +69,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringAnnualCheckUpToday()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -119,21 +94,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringVignetteCarsInTheNextSevenDays()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -157,21 +119,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringVignetteCarsToday()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -195,21 +144,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringInsuranceInTheNextSevenDays()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -233,21 +169,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             var filterModel = this.filterService
                                   .FilterExpiringInsuranceToday()
                                   .ToList();
-            var viewModel = new List<FilterViewModel>();
 
-            foreach (var filter in filterModel)
-            {
-                var currentFilter = new FilterViewModel()
-                {
-                    Manufacturer = filter.Manufacturer,
-                    Model = filter.Model,
-                    RegistrationNumber = filter.RegistrationNumber,
-                    VINNumber = filter.VINNumber,
-                    ExpirationDate = filter.ValidUntilAnnualCheckUp
-                };
-
-                viewModel.Add(currentFilter);
-            }
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
 
             return View(viewModel);
         }
@@ -264,5 +187,38 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
+
+        #region Loading information for filter view model from the database
+
+        public List<FilterViewModel> LoadModelsInfomationFromTheDatabase(List<Car> filterModel)
+        {
+            var viewModel = new List<FilterViewModel>();
+
+            foreach (var filter in filterModel)
+            {
+                string currentUserNotificationMessage = string.Empty;
+                if (filter.User.IsEmailSended == false)
+                    currentUserNotificationMessage = "The user isn't notified for the expiration yet.";
+                else
+                    currentUserNotificationMessage = "The user is notified for the expiration.";
+
+                var currentFilter = new FilterViewModel()
+                {
+                    OwnerOfVehicle = filter.User.FirstName + " " + filter.User.LastName,
+                    Manufacturer = filter.Manufacturer,
+                    Model = filter.Model,
+                    RegistrationNumber = filter.RegistrationNumber,
+                    VINNumber = filter.VINNumber,
+                    ExpirationDate = filter.ValidUntilAnnualCheckUp,
+                    UserNotificationMessage = currentUserNotificationMessage
+                };
+
+                viewModel.Add(currentFilter);
+            }
+
+            return viewModel;
+        }
+
+        #endregion
     }
 }
