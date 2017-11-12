@@ -72,7 +72,7 @@ namespace CarsSystem.Services
         public IEnumerable<string> GetMailsForCarsVignetteExpirationToday()
         {
             return this.FilterExpiringVignetteCarsToday()
-                .Select(c => c.User.Email);
+                       .Select(c => c.User.Email);
         }
 
         public IEnumerable<string> GetMailsForCarsInsuranceExpirationInTheNextSevenDays()
@@ -97,6 +97,11 @@ namespace CarsSystem.Services
         {
             return this.FilterExpiringAnnualCheckUpToday()
                        .Select(c => c.User.Email);
+        }
+
+        public void SaveChanges()
+        {
+            this.carRepo.SaveChanges();
         }
     }
 }

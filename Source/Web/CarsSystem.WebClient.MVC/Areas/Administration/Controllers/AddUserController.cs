@@ -103,6 +103,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 ValidUntilAnnualCheckUp = receivedModel.Car.ValidUntilAnnualCheckUp,
                 ValidUntilVignette = receivedModel.Car.ValidUntilVignette,
                 ValidUntilInsurance = receivedModel.Car.ValidUntilInsurance,
+                IsEmailSendedForAnnual = false,
+                IsEmailSendedForInsurance = false,
+                IsEmailSendedForVignette = false,
                 UserId = userToAdd.Id,
                 Id = Guid.NewGuid()
             };

@@ -155,6 +155,9 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             carToUpdate.ValidUntilAnnualCheckUp = car.ValidUntilAnnualCheckUp;
             carToUpdate.ValidUntilInsurance = car.ValidUntilInsurance;
             carToUpdate.ValidUntilVignette = car.ValidUntilVignette;
+            carToUpdate.IsEmailSendedForAnnual = false;
+            carToUpdate.IsEmailSendedForInsurance = false;
+            carToUpdate.IsEmailSendedForVignette = false;
 
             this.service.Update(carToUpdate);
 

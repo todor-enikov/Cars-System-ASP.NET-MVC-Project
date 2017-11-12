@@ -45,7 +45,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringAnnualCheckUpInTheNextSevenDays()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "annual");
 
             return View(viewModel);
         }
@@ -60,6 +60,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
+            var cars = this.filterService
+                           .FilterExpiringAnnualCheckUpInTheNextSevenDays()
+                           .ToList();
+            this.UpdateIsEmailSendedForAnnualPropertyAfterSendingEmails(cars);
+
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
@@ -70,7 +75,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringAnnualCheckUpToday()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "annual");
 
             return View(viewModel);
         }
@@ -81,9 +86,14 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         {
             var emails = this.filterService
                              .GetMailsForCarsAnnualCheckUpToday()
-                             .ToList();
+                             .ToList(); 
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
+
+            var cars = this.filterService
+                           .FilterExpiringAnnualCheckUpToday()
+                           .ToList();
+            this.UpdateIsEmailSendedForAnnualPropertyAfterSendingEmails(cars);
 
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
@@ -95,7 +105,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringVignetteCarsInTheNextSevenDays()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "vignette");
 
             return View(viewModel);
         }
@@ -110,6 +120,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
+            var cars = this.filterService
+                           .FilterExpiringVignetteCarsInTheNextSevenDays()
+                           .ToList();
+            this.UpdateIsEmailSendedForVignettePropertyAfterSendingEmails(cars);
+
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
@@ -120,7 +135,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringVignetteCarsToday()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "vignette");
 
             return View(viewModel);
         }
@@ -135,6 +150,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
+            var cars = this.filterService
+                           .FilterExpiringVignetteCarsToday()
+                           .ToList();
+            this.UpdateIsEmailSendedForVignettePropertyAfterSendingEmails(cars);
+
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
@@ -145,7 +165,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringInsuranceInTheNextSevenDays()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "insurance");
 
             return View(viewModel);
         }
@@ -160,6 +180,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
+            var cars = this.filterService
+                           .FilterExpiringInsuranceInTheNextSevenDays()
+                           .ToList();
+            this.UpdateIsEmailSendedForInsurancePropertyAfterSendingEmails(cars);
+
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
@@ -170,7 +195,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                                   .FilterExpiringInsuranceToday()
                                   .ToList();
 
-            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel);
+            var viewModel = this.LoadModelsInfomationFromTheDatabase(filterModel, "insurance");
 
             return View(viewModel);
         }
@@ -185,22 +210,23 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
+            var cars = this.filterService
+                           .FilterExpiringInsuranceToday()
+                           .ToList();
+            this.UpdateIsEmailSendedForInsurancePropertyAfterSendingEmails(cars);
+
             return RedirectToAction("Index", "Success", new { area = "Administration" });
         }
 
-        #region Loading information for filter view model from the database
+        #region Help methods for Filter Controller
 
-        public List<FilterViewModel> LoadModelsInfomationFromTheDatabase(List<Car> filterModel)
+        public List<FilterViewModel> LoadModelsInfomationFromTheDatabase(List<Car> filterModel, string forTax)
         {
             var viewModel = new List<FilterViewModel>();
 
             foreach (var filter in filterModel)
             {
-                string currentUserNotificationMessage = string.Empty;
-                if (filter.User.IsEmailSended == false)
-                    currentUserNotificationMessage = "The user isn't notified for the expiration yet.";
-                else
-                    currentUserNotificationMessage = "The user is notified for the expiration.";
+                string currentUserNotificationMessage = this.GetCurrentNotificationMessage(filter, forTax);
 
                 var currentFilter = new FilterViewModel()
                 {
@@ -217,6 +243,64 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
             }
 
             return viewModel;
+        }
+
+        public string GetCurrentNotificationMessage(Car filter, string forTax)
+        {
+            string currentUserNotificationMessage = string.Empty;
+            if (forTax == "annual")
+            {
+                if (filter.IsEmailSendedForAnnual == false)
+                    currentUserNotificationMessage = "The user isn't notified for the expiration yet.";
+                else
+                    currentUserNotificationMessage = "The user is notified for the expiration.";
+            }
+            else if (forTax == "vignette")
+            {
+                if (filter.IsEmailSendedForVignette == false)
+                    currentUserNotificationMessage = "The user isn't notified for the expiration yet.";
+                else
+                    currentUserNotificationMessage = "The user is notified for the expiration.";
+            }
+            else if (forTax == "insurance")
+            {
+                if (filter.IsEmailSendedForInsurance == false)
+                    currentUserNotificationMessage = "The user isn't notified for the expiration yet.";
+                else
+                    currentUserNotificationMessage = "The user is notified for the expiration.";
+            }
+
+            return currentUserNotificationMessage;
+        }
+
+        public void UpdateIsEmailSendedForAnnualPropertyAfterSendingEmails(List<Car> filteredCars)
+        {
+            foreach (var car in filteredCars)
+            {
+                car.IsEmailSendedForAnnual = true;
+            }
+
+            this.filterService.SaveChanges();
+        }
+
+        public void UpdateIsEmailSendedForVignettePropertyAfterSendingEmails(List<Car> filteredCars)
+        {
+            foreach (var car in filteredCars)
+            {
+                car.IsEmailSendedForVignette = true;
+            }
+
+            this.filterService.SaveChanges();
+        }
+
+        public void UpdateIsEmailSendedForInsurancePropertyAfterSendingEmails(List<Car> filteredCars)
+        {
+            foreach (var car in filteredCars)
+            {
+                car.IsEmailSendedForInsurance = true;
+            }
+
+            this.filterService.SaveChanges();
         }
 
         #endregion

@@ -58,8 +58,6 @@ namespace CarsSystem.Data.Models
         [Required]
         public override string Email { get; set; }
 
-        public bool IsEmailSended { get; set; }
-
         public virtual ICollection<Car> Cars
         {
             get { return this.cars; }

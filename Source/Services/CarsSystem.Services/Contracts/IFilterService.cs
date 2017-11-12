@@ -28,5 +28,7 @@ namespace CarsSystem.Services.Contracts
         IEnumerable<string> GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays();
 
         IEnumerable<string> GetMailsForCarsAnnualCheckUpToday();
+
+        void SaveChanges();
     }
 }

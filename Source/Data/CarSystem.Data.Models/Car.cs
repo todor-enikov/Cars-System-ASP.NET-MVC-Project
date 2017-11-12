@@ -54,6 +54,12 @@ namespace CarsSystem.Data.Models
         [Required]
         public DateTime ValidUntilInsurance { get; set; }
 
+        public bool IsEmailSendedForAnnual { get; set; }
+
+        public bool IsEmailSendedForVignette { get; set; }
+
+        public bool IsEmailSendedForInsurance { get; set; }
+
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
