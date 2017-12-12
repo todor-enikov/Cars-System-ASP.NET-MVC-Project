@@ -1,4 +1,4 @@
-# Cars-System-ASP.NET-MVC-Project
+﻿# Cars-System-ASP.NET-MVC-Project
 Final project for Telerik Academy 2016-2017 season
 
 
@@ -13,7 +13,7 @@ Roles in the application and what can they visit.
 * Regular user - can visit home, about, contact, profile pages.
 * Not registered user - can see only about, home, contact and login pages.
 
-### Images from the application:
+### Images from the application: 
 
 ![](Images/Home.png)
 ![](Images/AddUser.png)
