@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A11FA216-F7DF-4331-945B-5E9882F1CFF4}</ProjectGuid>
+    <ProjectGuid>{D5044A5D-DFDE-49C6-9C72-5A1DBC9E7236}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CarsSystemConsoleApp</RootNamespace>
@@ -34,19 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -68,19 +68,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common\Common.csproj">
+    <ProjectReference Include="..\..\Common\Common\Common.csproj">
       <Project>{f4747700-a6ca-44a7-8876-e47941d6d34f}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\CarSystem.Data.Models\CarSystem.Data.Models.csproj">
+    <ProjectReference Include="..\..\Data\CarSystem.Data.Models\CarSystem.Data.Models.csproj">
       <Project>{b5ba247e-47f1-4854-a0b0-6f96b941a287}</Project>
       <Name>CarSystem.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\CarSystem.Data\CarSystem.Data.csproj">
+    <ProjectReference Include="..\..\Data\CarSystem.Data\CarSystem.Data.csproj">
       <Project>{edc3c553-531a-4153-9a0f-c5202678a8aa}</Project>
       <Name>CarSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\CarsSystem.Services\CarsSystem.Services.csproj">
+    <ProjectReference Include="..\..\Services\CarsSystem.Services\CarsSystem.Services.csproj">
       <Project>{ef373982-2cde-4897-bfb5-932595eefa12}</Project>
       <Name>CarsSystem.Services</Name>
     </ProjectReference>
