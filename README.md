@@ -1,9 +1,5 @@
 ﻿# Cars-System-ASP.NET-MVC-Project
-Final project for Telerik Academy 2016-2017 season
-
-
-### Link to Telerik Academy:
-* Enikov - Тодор Еников - https://telerikacademy.com/Users/Enikov
+Diploma work for my Master Degree in Technical University of Sofia.
 
 ### Project desctiption:
 This is application made on ASP .NET MVC. It's purpose is to collect information about customers and their cars information. The application has administration panel and only user with role "Admin", can add information, about given customer and his car. The specific in this application is that the administrator of the application can filter cars by mannual check up, vignette and insurance expiration and on that base to send emails to thoose customers, which expiration is soon.
