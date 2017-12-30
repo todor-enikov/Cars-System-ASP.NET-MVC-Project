@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSystem.Data.Models", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSystem.Data", "Data\CarSystem.Data\CarSystem.Data.csproj", "{EDC3C553-531A-4153-9A0F-C5202678A8AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApplication", "ConsoleApplication", "{CE05F86A-5B47-41B5-A6C5-4FA2640EED2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystemConsoleApp", "CarsSystemConsoleApp\CarsSystemConsoleApp.csproj", "{A11FA216-F7DF-4331-945B-5E9882F1CFF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{EDC3C553-531A-4153-9A0F-C5202678A8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDC3C553-531A-4153-9A0F-C5202678A8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDC3C553-531A-4153-9A0F-C5202678A8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11FA216-F7DF-4331-945B-5E9882F1CFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11FA216-F7DF-4331-945B-5E9882F1CFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11FA216-F7DF-4331-945B-5E9882F1CFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11FA216-F7DF-4331-945B-5E9882F1CFF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +88,6 @@ Global
 		{22F166D4-33F4-424B-9D8B-D06EBBCDCD66} = {B995ECC4-1107-43EE-A928-A266AD74F6DB}
 		{B5BA247E-47F1-4854-A0B0-6F96B941A287} = {51FDA9FA-267A-48F1-8F21-DB67ACCD241B}
 		{EDC3C553-531A-4153-9A0F-C5202678A8AA} = {51FDA9FA-267A-48F1-8F21-DB67ACCD241B}
+		{A11FA216-F7DF-4331-945B-5E9882F1CFF4} = {CE05F86A-5B47-41B5-A6C5-4FA2640EED2B}
 	EndGlobalSection
 EndGlobal

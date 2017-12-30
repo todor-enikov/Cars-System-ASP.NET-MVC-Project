@@ -78,7 +78,6 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Search(string vinNumber)
         {
-
             if (string.IsNullOrEmpty(vinNumber))
             {
                 return RedirectToAction("InternalServer", "Error", new { area = "Error" });
