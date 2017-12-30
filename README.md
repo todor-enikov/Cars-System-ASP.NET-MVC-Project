@@ -16,6 +16,10 @@ Roles in the application and what can they visit.
 ![](Images/AllUsers.png)
 ![](Images/AllCars.png)
 
-## GitHub repository:
+## GitHub repository link:
 
 https://github.com/todor-enikov/Cars-System-ASP.NET-MVC-Project
+
+## Documentation folder includes:
+  * Final documentation for TU - Sofia
+  * How to set up Task Scheduler to run the exe from CarsSystemConsoleApp?
