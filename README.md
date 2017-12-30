@@ -22,4 +22,5 @@ https://github.com/todor-enikov/Cars-System-ASP.NET-MVC-Project
 
 ## Documentation folder includes:
   * Final documentation for TU - Sofia
+  * Presentation for TU - Sofia
   * How to set up Task Scheduler to run the exe from CarsSystemConsoleApp?
