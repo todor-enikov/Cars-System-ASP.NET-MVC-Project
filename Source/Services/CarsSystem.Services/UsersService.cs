@@ -34,7 +34,7 @@ namespace CarsSystem.Services
         public IEnumerable<User> GetUserByEGN(long egn)
         {
             return this.userRepo.All()
-                                .Where(u => u.EGN == egn);
+                                .Where(u => u.EGN.ToString().Contains(egn.ToString()));
         }
 
         public string GetUserId(Car car)

@@ -48,7 +48,7 @@ namespace CarsSystem.Services
         public IEnumerable<Car> GetCarByVinNumber(string vinNumber)
         {
             var result = this.GetAllCars()
-                             .Where(c => c.VINNumber == vinNumber);
+                             .Where(c => c.VINNumber.Contains(vinNumber));
 
             return result;
         }
