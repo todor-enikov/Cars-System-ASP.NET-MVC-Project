@@ -215,11 +215,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Error\ImagesForErrors\400-badrequest.jpg" />
-    <Content Include="Areas\Error\ImagesForErrors\401-unauthorized.jpg" />
-    <Content Include="Areas\Error\ImagesForErrors\403-forbidden.jpg" />
-    <Content Include="Areas\Error\ImagesForErrors\404-NotFound.jpg" />
-    <Content Include="Areas\Error\ImagesForErrors\500-IternalServerError.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -271,11 +266,11 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Error\Views\web.config" />
     <Content Include="Areas\Error\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Error\Views\Error\Forbidden.cshtml" />
-    <Content Include="Areas\Error\Views\Error\NotFound.cshtml" />
-    <Content Include="Areas\Error\Views\Error\InternalServer.cshtml" />
-    <Content Include="Areas\Error\Views\Error\UnAuthorized.cshtml" />
-    <Content Include="Areas\Error\Views\Error\BadRequest.cshtml" />
+    <None Include="Areas\Error\Views\Error\Forbidden.cshtml" />
+    <None Include="Areas\Error\Views\Error\NotFound.cshtml" />
+    <None Include="Areas\Error\Views\Error\InternalServer.cshtml" />
+    <None Include="Areas\Error\Views\Error\UnAuthorized.cshtml" />
+    <None Include="Areas\Error\Views\Error\BadRequest.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\AddUser\AddUser.cshtml" />
