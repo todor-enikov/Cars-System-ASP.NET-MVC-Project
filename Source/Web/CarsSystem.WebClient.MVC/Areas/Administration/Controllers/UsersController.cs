@@ -86,11 +86,11 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         public ActionResult Search(string search)
         {
             long result;
-            var parsed = long.TryParse(search, out result);
+            bool isParsed = long.TryParse(search, out result);
 
-            if (string.IsNullOrEmpty(search) || parsed == false)
+            if (string.IsNullOrEmpty(search) || isParsed == false)
             {
-                return RedirectToAction("InternalServer", "Error", new { area = "Error" });
+                return PartialView("_NoResults");
             }
 
             var userModel = this.usersService
