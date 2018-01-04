@@ -25,12 +25,10 @@ namespace CarsSystemConsoleApp
 
         public static void SendAutomationEmailToAllUsersWithExpiringOfAnnualCheckUp(FilterService filterService, MailService mailService)
         {
-            List<string> emailsForAnnualCheckUp = filterService.GetMailsForCarsAnnualCheckUpExpirationInTheNextSevenDays().ToList();
+            List<string> emailsForAnnualCheckUp = filterService.GetMailsForCarsAnnualCheckUpToday().ToList();
             mailService.SendEmail(ApplicationConstants.SubjectExpiringAnnualCheckUp, ApplicationConstants.ContentExpiringAnnualCheckUp, emailsForAnnualCheckUp);
 
-            List<Car> cars = filterService
-                           .FilterExpiringAnnualCheckUpInTheNextSevenDays()
-                           .ToList();
+            List<Car> cars = filterService.FilterExpiringAnnualCheckUpToday().ToList();
 
             foreach (var car in cars)
             {
@@ -44,12 +42,10 @@ namespace CarsSystemConsoleApp
 
         public static void SendAutomationEmailToAllUsersWithExpiringOfInsurance(FilterService filterService, MailService mailService)
         {
-            List<string> emailsForInsurance = filterService.GetMailsForCarsInsuranceExpirationInTheNextSevenDays().ToList();
+            List<string> emailsForInsurance = filterService.GetMailsForCarsInsuranceExpirationToday().ToList();
             mailService.SendEmail(ApplicationConstants.SubjectExpiringInsurance, ApplicationConstants.ContentExpiringInsurance, emailsForInsurance);
 
-            List<Car> cars = filterService
-                           .FilterExpiringInsuranceInTheNextSevenDays()
-                           .ToList();
+            List<Car> cars = filterService.FilterExpiringInsuranceToday().ToList();
 
             foreach (var car in cars)
             {
@@ -63,12 +59,10 @@ namespace CarsSystemConsoleApp
 
         public static void SendAutomationEmailToAllUsersWithExpiringOfVignette(FilterService filterService, MailService mailService)
         {
-            List<string> emailsForVignette = filterService.GetMailsForCarsVignetteExpirationInTheNextSevenDays().ToList();
+            List<string> emailsForVignette = filterService.GetMailsForCarsVignetteExpirationToday().ToList();
             mailService.SendEmail(ApplicationConstants.SubjectExpiringVignette, ApplicationConstants.ContentExpiringVignette, emailsForVignette);
 
-            List<Car> cars = filterService
-                           .FilterExpiringVignetteCarsInTheNextSevenDays()
-                           .ToList();
+            List<Car> cars = filterService.FilterExpiringVignetteCarsToday().ToList();
 
             foreach (var car in cars)
             {
