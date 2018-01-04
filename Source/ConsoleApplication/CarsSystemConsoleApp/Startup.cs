@@ -15,12 +15,19 @@ namespace CarsSystemConsoleApp
     {
         public static void Main()
         {
-            FilterService filterService = new FilterService(new EfGenericRepository<Car>(new CarsSystemDbContext()));
-            MailService mailService = new MailService();
+            try
+            {
+                FilterService filterService = new FilterService(new EfGenericRepository<Car>(new CarsSystemDbContext()));
+                MailService mailService = new MailService();
 
-            SendAutomationEmailToAllUsersWithExpiringOfAnnualCheckUp(filterService, mailService);
-            SendAutomationEmailToAllUsersWithExpiringOfInsurance(filterService, mailService);
-            SendAutomationEmailToAllUsersWithExpiringOfVignette(filterService, mailService);
+                SendAutomationEmailToAllUsersWithExpiringOfAnnualCheckUp(filterService, mailService);
+                SendAutomationEmailToAllUsersWithExpiringOfInsurance(filterService, mailService);
+                SendAutomationEmailToAllUsersWithExpiringOfVignette(filterService, mailService);
+            }
+            catch (Exception message)
+            {
+                Console.WriteLine(message);
+            }
         }
 
         public static void SendAutomationEmailToAllUsersWithExpiringOfAnnualCheckUp(FilterService filterService, MailService mailService)
