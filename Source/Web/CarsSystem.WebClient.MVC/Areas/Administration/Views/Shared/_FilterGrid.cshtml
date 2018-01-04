@@ -8,7 +8,8 @@
     tableStyle: "table table-striped table-hover form-group",
     headerStyle: "text-right",
     columns: grid.Columns(
-        grid.Column("OwnerOfVehicle", "Owner"),
+        grid.Column(columnName: "Owner", format: (item) => Html.ActionLink(((string)item.OwnerOfVehicle), "Details", "Users", new { id = item.OwnerId }, null)),
+        grid.Column(columnName: "Manufacturer", format: (item) => Html.ActionLink(((string)item.Manufacturer), "Details", "Cars", new { id = item.CarId }, null)),
         grid.Column("Manufacturer", "Manufacturer"),
         grid.Column("Model", "Model"),
         grid.Column("RegistrationNumber", "Registration number"),

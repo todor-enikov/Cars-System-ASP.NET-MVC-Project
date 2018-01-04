@@ -86,7 +86,7 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
         {
             var emails = this.filterService
                              .GetMailsForCarsAnnualCheckUpToday()
-                             .ToList(); 
+                             .ToList();
 
             this.mailService.SendEmail(emailSubjectTextBox, emailContentBox, emails);
 
@@ -230,13 +230,15 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
 
                 var currentFilter = new FilterViewModel()
                 {
+                    CarId = filter.Id,
+                    OwnerId = filter.User.Id,
                     OwnerOfVehicle = filter.User.FirstName + " " + filter.User.LastName,
                     Manufacturer = filter.Manufacturer,
                     Model = filter.Model,
                     RegistrationNumber = filter.RegistrationNumber,
                     VINNumber = filter.VINNumber,
                     ExpirationDate = filter.ValidUntilAnnualCheckUp,
-                    UserNotificationMessage = currentUserNotificationMessage
+                    UserNotificationMessage = currentUserNotificationMessage,
                 };
 
                 viewModel.Add(currentFilter);

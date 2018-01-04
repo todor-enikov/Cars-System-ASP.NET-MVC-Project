@@ -4,6 +4,10 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Models.Filter
 {
     public class FilterViewModel
     {
+        public Guid CarId { get; set; }
+
+        public string OwnerId { get; set; }
+
         public string OwnerOfVehicle { get; set; }
 
         public string Manufacturer { get; set; }
