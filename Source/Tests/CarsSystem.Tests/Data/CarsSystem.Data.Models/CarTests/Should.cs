@@ -153,6 +153,36 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models.CarTests
         }
 
         [Test]
+        public void CreateExpectedIsEmailSendedForAnnualField_WhenInstantiedNewCar()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act & Assert
+            Assert.AreEqual(false, car.IsEmailSendedForAnnual);
+        }
+
+        [Test]
+        public void CreateExpectedIsEmailSendedForVignetteField_WhenInstantiedNewCar()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act & Assert
+            Assert.AreEqual(false, car.IsEmailSendedForVignette);
+        }
+
+        [Test]
+        public void CreateExpectedIsEmailSendedForInsuranceField_WhenInstantiedNewCar()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act & Assert
+            Assert.AreEqual(false, car.IsEmailSendedForAnnual);
+        }
+
+        [Test]
         public void SetsManufacturerField_Correctly()
         {
             // Arrange
@@ -262,6 +292,48 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models.CarTests
 
             // Assert
             Assert.AreEqual(expectedTypeOfCar, car.TypeOfCar);
+        }
+
+        [Test]
+        public void SetsIsEmailSendedForAnnualField_Correctly()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act
+            car.IsEmailSendedForAnnual = true;
+            var expectedIsEmailSendedForAnnual = true;
+
+            // Assert
+            Assert.AreEqual(expectedIsEmailSendedForAnnual, car.IsEmailSendedForAnnual);
+        }
+
+        [Test]
+        public void SetsIsEmailSendedForVignetteField_Correctly()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act
+            car.IsEmailSendedForVignette = true;
+            var expectedIsEmailSendedForVignette = true;
+
+            // Assert
+            Assert.AreEqual(expectedIsEmailSendedForVignette, car.IsEmailSendedForVignette);
+        }
+
+        [Test]
+        public void SetsIsEmailSendedForInsuranceField_Correctly()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act
+            car.IsEmailSendedForInsurance = true;
+            var expectedIsEmailSendedForInsurance = true;
+
+            // Assert
+            Assert.AreEqual(expectedIsEmailSendedForInsurance, car.IsEmailSendedForInsurance);
         }
     }
 }
