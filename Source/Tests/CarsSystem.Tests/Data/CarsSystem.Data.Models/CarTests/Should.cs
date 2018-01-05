@@ -93,7 +93,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models.CarTests
             var car = new Car();
 
             // Act & Assert
-            Assert.AreEqual(car.TypeOfCar, CarType.Ordinary);
+            Assert.AreEqual(car.TypeOfCar, CarType.Sedan);
         }
 
         [Test]
@@ -287,8 +287,8 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models.CarTests
             var car = new Car();
 
             // Act
-            car.TypeOfCar = CarType.Taxi;
-            var expectedTypeOfCar = CarType.Taxi;
+            car.TypeOfCar = CarType.Convertible;
+            var expectedTypeOfCar = CarType.Convertible;
 
             // Assert
             Assert.AreEqual(expectedTypeOfCar, car.TypeOfCar);
