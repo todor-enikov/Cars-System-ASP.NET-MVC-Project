@@ -12,9 +12,20 @@ Roles in the application and what can they visit.
 ### Images from the application: 
 
 ![](Images/Home.png)
+
 ![](Images/AddUser.png)
+
 ![](Images/AllUsers.png)
+
 ![](Images/AllCars.png)
+
+![](Images/UserDetails.png)
+
+![](Images/CarDetails.png)
+
+![](Images/AnnualExpiresToday.png)
+
+![](Images/AnnualExpiresNextSevenDays.png)
 
 ## GitHub repository link:
 
