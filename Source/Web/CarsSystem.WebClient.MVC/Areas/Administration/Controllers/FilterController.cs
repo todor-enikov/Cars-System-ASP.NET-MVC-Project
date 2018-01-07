@@ -231,8 +231,8 @@ namespace CarsSystem.WebClient.MVC.Areas.Administration.Controllers
                 var currentFilter = new FilterViewModel()
                 {
                     CarId = filter.Id,
-                    OwnerId = filter.User.Id,
-                    OwnerOfVehicle = filter.User.FirstName + " " + filter.User.LastName,
+                    CustomerId = filter.User.Id,
+                    CustomerOfVehicle = filter.User.FirstName + " " + filter.User.LastName,
                     Manufacturer = filter.Manufacturer,
                     Model = filter.Model,
                     RegistrationNumber = filter.RegistrationNumber,
