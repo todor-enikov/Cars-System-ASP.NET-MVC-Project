@@ -15,5 +15,5 @@
         grid.Column("RegistrationNumber", "Registration number"),
         grid.Column("VINNumber", "VIN number"),
         grid.Column("ExpirationDate", "Valid until", format: (item) => string.Format("{0:dd/MM/yyyy}", item.ExpirationDate)),
-        grid.Column("UserNotificationMessage", "Is user notified for expiring with e-mail?")
+        grid.Column("UserNotificationMessage", "Is user notified for expiring via e-mail?")
       ))
